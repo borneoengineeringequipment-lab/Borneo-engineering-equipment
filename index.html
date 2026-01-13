@@ -14,316 +14,241 @@
       margin: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      color: #1f2937;
+      color: #1f2933;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* ================= HEADER ================= */
+    /* ===== HEADER ===== */
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       background: #0f172a;
-      padding: 16px 24px;
+      padding: 14px 16px;
     }
 
-    .logo {
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 1.3;
-      max-width: 240px;
+    .nav-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .logo-area img {
+      height: 40px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
-      margin: 0;
+      gap: 16px;
       padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
     }
 
-    nav ul li a {
-      color: #ffffff;
+    nav a {
+      color: #fff;
       text-decoration: none;
       font-size: 14px;
-      white-space: nowrap;
     }
 
-    nav ul li a:hover {
-      color: #38bdf8;
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
     }
 
-    /* ================= HERO ================= */
+    /* ===== HERO ===== */
     .hero {
-      background: linear-gradient(180deg, #0f172a, #083344);
-      color: white;
+      background: #020617;
+      color: #fff;
+      padding: 60px 20px;
       text-align: center;
-      padding: 90px 20px;
     }
 
     .hero h1 {
-      font-size: 32px;
+      font-size: 28px;
       margin-bottom: 10px;
     }
 
     .hero p {
+      max-width: 700px;
+      margin: auto;
       font-size: 15px;
-      margin-bottom: 25px;
+      color: #cbd5e1;
     }
 
-    .btn-wa {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 14px 26px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 14px;
+    /* ===== SECTION ===== */
+    section {
+      padding: 50px 20px;
     }
 
-    /* ================= CONTENT ================= */
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 60px 20px;
     }
 
-    h2, h3 {
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
       color: #0f172a;
     }
 
+    /* ===== SERVICES ===== */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
-      margin-top: 30px;
     }
 
     .card {
-      background: white;
       border: 1px solid #e5e7eb;
       padding: 20px;
       border-radius: 8px;
+      text-align: center;
     }
 
-    /* ================= CTA ================= */
+    /* ===== BENEFITS ===== */
+    .benefits ul {
+      max-width: 600px;
+      margin: auto;
+      padding-left: 20px;
+    }
+
+    /* ===== CTA ===== */
     .cta {
       background: #0f172a;
-      color: white;
+      color: #fff;
       text-align: center;
     }
 
-    .cta h2 {
-      color: white;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      background: #020617;
-      color: #cbd5f5;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-
-    /* ================= FLOATING WA ================= */
-    .wa-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 30px;
+    .cta a {
+      display: inline-block;
+      margin-top: 15px;
+      background: #22c55e;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 2000;
-      font-size: 14px;
     }
 
-    /* =================================================
-       ================ MOBILE IMPROVEMENT ===============
-       ================================================= */
-    @media (max-width: 768px) {
-
-      /* HEADER */
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 14px 16px;
-      }
-
-      .logo {
-        font-size: 16px;
-        margin-bottom: 12px;
-        max-width: 100%;
-      }
-
-      nav ul {
-        flex-direction: column;
-        width: 100%;
-        gap: 6px;
-      }
-
-      nav ul li a {
-        font-size: 15px;
-        padding: 6px 0;
-      }
-
-      /* HERO */
-      .hero {
-        padding: 70px 16px;
-      }
-
-      .hero h1 {
-        font-size: 24px;
-        line-height: 1.3;
-      }
-
-      .hero p {
-        font-size: 14px;
-      }
-
-      .btn-wa {
-        font-size: 15px;
-        padding: 14px 22px;
-      }
-
-      /* CONTENT */
-      .container {
-        padding: 40px 16px;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
-
-      p, li {
-        font-size: 15px;
-      }
-
-      /* GRID → 1 KOLOM */
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      /* CTA */
-      .cta {
-        padding: 40px 16px;
-      }
-
-      /* FLOATING WA */
-      .wa-float {
-        font-size: 13px;
-        padding: 10px 14px;
-      }
+    /* ===== FOOTER ===== */
+    footer {
+      background: #020617;
+      color: #94a3b8;
+      text-align: center;
+      padding: 14px;
+      font-size: 13px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
+<header>
+  <div class="nav-container">
+    <div class="logo-area">
+      <img src="logo.png" alt="Borneo Engineering Equipment">
+      <span>Borneo Engineering Equipment</span>
+    </div>
+
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">Tentang Kami</a></li>
-        <li><a href="#services">Layanan</a></li>
+        <li><a href="#services">Unit</a></li>
         <li><a href="#contact">Kontak</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <h1>Borneo Engineering Equipment</h1>
-    <p>Rental Alat Berat Nasional • Profesional • Fleksibel</p>
-    <a class="btn-wa" href="https://wa.me/6282190724298" target="_blank">
-      Konsultasi via WhatsApp
-    </a>
-  </section>
+<section class="hero" id="home">
+  <h1>Rental Alat Berat Profesional & Terpercaya</h1>
+  <p>
+    Mendukung kebutuhan proyek konstruksi, pertambangan, dan industri
+    dengan unit siap kerja dan layanan responsif.
+  </p>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="container">
+<section id="about">
+  <div class="container">
     <h2>Tentang Kami</h2>
     <p>
-      Borneo Engineering Equipment adalah penyedia layanan rental alat berat
-      untuk proyek konstruksi, pertambangan, pelabuhan, dan industri
-      di berbagai wilayah Indonesia.
+      Borneo Engineering Equipment adalah perusahaan penyedia jasa rental alat berat
+      yang berkomitmen menghadirkan solusi kerja yang efisien, aman, dan tepat waktu
+      untuk berbagai jenis proyek konstruksi dan industri.
     </p>
     <p>
-      Kami menyediakan unit siap kerja dengan sistem sewa fleksibel
-      serta komunikasi yang cepat dan transparan.
+      Kami menyediakan unit alat berat yang terawat dan siap kerja, didukung oleh
+      sistem sewa yang fleksibel serta tim yang responsif dalam memahami kebutuhan
+      setiap klien.
     </p>
-  </section>
+    <p>
+      Dengan fokus pada kualitas layanan dan kepuasan pelanggan, Borneo Engineering
+      Equipment siap menjadi mitra terpercaya yang membantu kelancaran dan
+      kesuksesan setiap proyek Anda.
+    </p>
+  </div>
+</section>
 
-  <!-- SERVICES -->
-  <section id="services" class="container">
+<section id="services">
+  <div class="container">
     <h2>Unit Tersedia</h2>
     <div class="grid">
       <div class="card">
         <h3>Excavator</h3>
-        <p>Pekerjaan tanah, konstruksi, dan pertambangan.</p>
+        <p>Berbagai kapasitas untuk pekerjaan tanah dan pertambangan.</p>
       </div>
       <div class="card">
         <h3>Mobile Crane</h3>
-        <p>Solusi angkat fleksibel berbagai lokasi proyek.</p>
+        <p>Solusi angkat fleksibel untuk area proyek dinamis.</p>
       </div>
       <div class="card">
         <h3>Crawler Crane</h3>
-        <p>Kapasitas besar untuk pekerjaan berat.</p>
+        <p>Kapasitas besar untuk pekerjaan berat dan jangka panjang.</p>
       </div>
       <div class="card">
         <h3>Dump Truck</h3>
-        <p>Mendukung hauling material proyek.</p>
+        <p>Mendukung kebutuhan hauling material proyek.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- BENEFITS -->
-  <section class="container">
+<section class="benefits">
+  <div class="container">
     <h2>Kenapa Memilih Kami</h2>
     <ul>
-      <li>Unit siap kerja & terawat</li>
-      <li>Fleksibel sesuai kebutuhan proyek</li>
-      <li>Respon cepat & komunikasi jelas</li>
-      <li>Dukungan pengiriman skala nasional</li>
+      <li>Unit alat berat siap kerja & terawat</li>
+      <li>Sistem sewa fleksibel sesuai kebutuhan proyek</li>
+      <li>Respon cepat dan komunikasi profesional</li>
+      <li>Dukungan pengiriman berbagai wilayah</li>
       <li>Harga kompetitif & transparan</li>
     </ul>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="cta">
-    <div class="container">
-      <h2>Butuh Alat Berat untuk Proyek Anda?</h2>
-      <p>Hubungi kami untuk diskusi kebutuhan unit dan jadwal kerja.</p>
-      <a class="btn-wa" href="https://wa.me/6282190724298" target="_blank">
-        Hubungi Sekarang
-      </a>
-    </div>
-  </section>
+<section class="cta" id="contact">
+  <div class="container">
+    <h2>Butuh Alat Berat untuk Proyek Anda?</h2>
+    <p>Hubungi kami untuk konsultasi kebutuhan unit dan jadwal kerja.</p>
+    <a href="https://wa.me/6282190724298" target="_blank">Hubungi Sekarang</a>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Borneo Engineering Equipment • All Rights Reserved
-  </footer>
-
-  <!-- FLOATING WA -->
-  <a class="wa-float"
-     href="https://wa.me/6282190724298"
-     target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20">
-    Hubungi Kami
-  </a>
+<footer>
+  © 2026 Borneo Engineering Equipment • All Rights Reserved
+</footer>
 
 </body>
 </html>
