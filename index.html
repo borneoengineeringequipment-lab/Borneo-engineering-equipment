@@ -7,23 +7,25 @@
 
 <style>
 *{
-margin:0;padding:0;box-sizing:border-box;
-font-family: "Segoe UI", Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-background:#f9fafb;
-color:#1f2933;
-line-height:1.7;
+background:#ffffff;
+color:#1f2937;
+line-height:1.6;
 }
 
 /* ===== HEADER ===== */
 header{
-background:#ffffff;
 position:sticky;
 top:0;
+background:#ffffff;
+border-bottom:1px solid #e5e7eb;
 z-index:1000;
-box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
 
 .header-inner{
@@ -37,7 +39,7 @@ align-items:center;
 
 .logo{
 font-weight:700;
-font-size:17px;
+font-size:16px;
 color:#f97316;
 }
 
@@ -48,7 +50,7 @@ gap:18px;
 
 nav a{
 text-decoration:none;
-color:#334155;
+color:#1f2937;
 font-size:14px;
 }
 
@@ -62,15 +64,13 @@ font-size:26px;
 cursor:pointer;
 }
 
-/* ===== CONTAINER ===== */
-.container{
-max-width:900px;
-margin:60px auto;
+/* ===== HERO ===== */
+.hero{
+max-width:1100px;
+margin:70px auto;
 padding:0 20px;
-text-align:center;
 }
 
-/* ===== HERO ===== */
 .hero h1{
 font-size:30px;
 margin-bottom:12px;
@@ -78,83 +78,92 @@ color:#f97316;
 }
 
 .hero p{
+max-width:720px;
 font-size:15px;
-color:#475569;
-max-width:700px;
-margin:auto;
+color:#374151;
 }
 
-/* ===== CARD ===== */
-.card{
-background:#ffffff;
-margin:50px auto;
-padding:35px;
-border-radius:18px;
-box-shadow:0 12px 30px rgba(0,0,0,.06);
-text-align:left;
+/* ===== SECTION ===== */
+section{
+max-width:1100px;
+margin:80px auto;
+padding:0 20px;
 }
 
-.card h2{
-color:#f97316;
+h2{
 font-size:22px;
-margin-bottom:16px;
-text-align:center;
+margin-bottom:18px;
+color:#f97316;
 }
 
-.card p{
+p{
 font-size:14px;
-color:#475569;
-margin-bottom:10px;
+color:#374151;
 }
 
-/* ===== LIST ===== */
-ul{
+/* ===== ACCORDION (UNIT) ===== */
+.accordion{
+border:1px solid #e5e7eb;
+border-radius:10px;
+margin-bottom:14px;
+overflow:hidden;
+}
+
+.accordion-header{
+padding:14px 16px;
+cursor:pointer;
+background:#f9fafb;
+font-weight:600;
+font-size:14px;
+}
+
+.accordion-header:hover{
+background:#fff7ed;
+}
+
+.accordion-content{
+display:none;
+padding:14px 18px;
+font-size:13px;
+background:#ffffff;
+}
+
+.accordion-content ul{
 padding-left:18px;
 }
 
-ul li{
-font-size:14px;
-margin-bottom:8px;
-color:#334155;
+/* ===== LIST ===== */
+.list{
+margin-left:18px;
 }
 
-/* ===== UNIT DETAILS ===== */
-details{
-margin-bottom:14px;
-border-radius:10px;
-padding:14px;
+.list li{
+margin-bottom:6px;
+font-size:14px;
+}
+
+/* ===== SOCIAL PROOF ===== */
+.social-proof{
 background:#fff7ed;
-cursor:pointer;
-}
-
-summary{
-font-weight:600;
-color:#9a3412;
+padding:20px;
+border-radius:12px;
 font-size:14px;
 }
 
-details p{
-margin-top:10px;
-font-size:13px;
-color:#475569;
-}
-
-/* ===== CTA ===== */
-.cta{
-margin-top:25px;
+/* ===== CONTACT ===== */
+.contact-box{
+margin-top:20px;
 display:flex;
-gap:14px;
+gap:12px;
 flex-wrap:wrap;
-justify-content:center;
 }
 
-.cta a{
+.contact-box a{
 text-decoration:none;
-padding:12px 18px;
-border-radius:10px;
-font-size:13px;
-font-weight:600;
-color:white;
+padding:10px 18px;
+border-radius:8px;
+font-size:14px;
+color:#ffffff;
 }
 
 .owner{
@@ -168,47 +177,46 @@ background:#0ea5e9;
 /* ===== FOOTER ===== */
 footer{
 margin-top:80px;
-padding:35px 20px;
-background:#020617;
-color:#cbd5e1;
+padding:30px 20px;
 text-align:center;
 font-size:13px;
+color:#6b7280;
+border-top:1px solid #e5e7eb;
 }
 
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-
-.hero h1{
-font-size:22px;
+nav{
+display:none;
+flex-direction:column;
+background:#ffffff;
+position:absolute;
+top:60px;
+right:20px;
+width:200px;
+padding:15px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
-.hero p{
-font-size:13px;
-}
-
-.card{
-padding:24px;
+nav.active{
+display:flex;
 }
 
 .menu-toggle{
 display:block;
 }
 
-nav{
-display:none;
-flex-direction:column;
-background:white;
-position:absolute;
-top:60px;
-right:20px;
-width:200px;
-padding:15px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+.hero h1{
+font-size:22px;
 }
 
-nav.active{
-display:flex;
+.hero p{
+font-size:14px;
+}
+
+h2{
+font-size:20px;
 }
 }
 </style>
@@ -216,6 +224,11 @@ display:flex;
 <script>
 function toggleMenu(){
 document.querySelector("nav").classList.toggle("active");
+}
+
+function toggleAccordion(el){
+const content = el.nextElementSibling;
+content.style.display = content.style.display === "block" ? "none" : "block";
 }
 </script>
 </head>
@@ -227,8 +240,9 @@ document.querySelector("nav").classList.toggle("active");
 <div class="logo">BORNEO ENGINEERING EQUIPMENT</div>
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 <nav>
-<a href="#about">Tentang</a>
-<a href="#units">Unit</a>
+<a href="#home">Home</a>
+<a href="#about">Tentang Kami</a>
+<a href="#services">Layanan</a>
 <a href="#why">Kenapa Kami</a>
 <a href="#workflow">Cara Kerja</a>
 <a href="#contact">Kontak</a>
@@ -236,112 +250,139 @@ document.querySelector("nav").classList.toggle("active");
 </div>
 </header>
 
-<div class="container hero">
-<h1>Koordinator & Penyedia Alat Berat</h1>
+<!-- HERO -->
+<div id="home" class="hero">
+<h1>Koordinator & Mitra Pengadaan Alat Berat</h1>
 <p>
-Kami adalah penyedia dan perantara alat berat independen & profesional,
-menghubungkan owner proyek dengan pemilik alat berat terpercaya
-untuk proyek kecil hingga skala besar (EPC & tambang).
+Kami berperan sebagai koordinator pengadaan alat berat yang bekerja secara independen dan profesional,
+menghubungkan owner proyek dengan perusahaan rental alat berat terpercaya untuk kebutuhan proyek kecil
+hingga skala besar.
 </p>
 </div>
 
 <!-- ABOUT -->
-<div id="about" class="card">
+<section id="about">
 <h2>Tentang Kami</h2>
 <p>
-Borneo Engineering Equipment berperan sebagai koordinator alat berat,
-bukan sekadar perantara biasa. Kami membantu owner mendapatkan unit yang tepat,
-cepat, dan efisien tanpa harus menghubungi banyak pihak.
+Kami bukan pemilik unit alat berat dan bukan perusahaan rental. Peran kami adalah sebagai pengatur dan
+koordinator pengadaan alat berat, membantu owner proyek mendapatkan unit yang sesuai melalui jaringan
+mitra rental yang telah bekerja sama.
 </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Layanan & Unit yang Kami Support</h2>
+
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAccordion(this)">Excavator</div>
+<div class="accordion-content">
+<ul>
+<li>PC75</li>
+<li>PC100</li>
+<li>PC200</li>
+<li>PC300</li>
+<li>PC400</li>
+</ul>
+</div>
 </div>
 
-<!-- UNITS -->
-<div id="units" class="card">
-<h2>Unit Alat Berat yang Kami Support</h2>
-
-<details>
-<summary>Excavator</summary>
-<p>PC75 • PC100 • PC200 • PC300 • PC400</p>
-</details>
-
-<details>
-<summary>Bulldozer</summary>
-<p>D3 • D6 • D7 • D8</p>
-</details>
-
-<details>
-<summary>Dump Truck</summary>
-<p>Roda 6 • Roda 10 • 20 Ton • 30 Ton</p>
-</details>
-
-<details>
-<summary>Crane</summary>
-<p>Mobile Crane • Truck Crane • Crawler Crane</p>
-</details>
-
-<details>
-<summary>Compactor</summary>
-<p>Vibro 10 Ton • Vibro 12 Ton</p>
-</details>
-
-<details>
-<summary>Wheel Loader</summary>
-<p>Loader Kecil • Loader Tambang</p>
-</details>
-
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAccordion(this)">Bulldozer</div>
+<div class="accordion-content">
+<ul>
+<li>D3</li>
+<li>D5</li>
+<li>D6</li>
+<li>D7</li>
+<li>D8</li>
+</ul>
 </div>
+</div>
+
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAccordion(this)">Dump Truck</div>
+<div class="accordion-content">
+<ul>
+<li>Roda 6</li>
+<li>Roda 10</li>
+<li>Kapasitas 20 – 30 Ton</li>
+</ul>
+</div>
+</div>
+
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAccordion(this)">Crane</div>
+<div class="accordion-content">
+<ul>
+<li>Truck Crane</li>
+<li>Mobile Crane</li>
+<li>Crawler Crane</li>
+</ul>
+</div>
+</div>
+
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAccordion(this)">Vibro / Compactor</div>
+<div class="accordion-content">
+<ul>
+<li>10 Ton</li>
+<li>12 Ton</li>
+</ul>
+</div>
+</div>
+
+</section>
 
 <!-- WHY -->
-<div id="why" class="card">
+<section id="why">
 <h2>Kenapa Memilih Kami</h2>
-<ul>
-<li>Koordinator alat berat fokus, profesional & independen</li>
-<li>Jaringan pemilik alat luas → unit lebih cepat tersedia</li>
-<li>Harga kompetitif & transparan untuk owner</li>
-<li>Sistem komunikasi satu pintu</li>
+<ul class="list">
+<li>Koordinasi satu pintu sehingga komunikasi lebih rapi dan efisien</li>
+<li>Akses ke berbagai perusahaan rental untuk ketersediaan unit lebih cepat</li>
+<li>Harga wajar dan transparan tanpa merugikan owner maupun rental</li>
 </ul>
-</div>
+</section>
 
 <!-- WORKFLOW -->
-<div id="workflow" class="card">
+<section id="workflow">
 <h2>Cara Kerja Kami</h2>
-<ul>
-<li>Owner menyampaikan kebutuhan unit</li>
-<li>Kami koordinasikan ke pemilik alat</li>
-<li>Penawaran terbaik & transparan</li>
-<li>Mobilisasi & monitoring</li>
+<ul class="list">
+<li>Owner menyampaikan kebutuhan unit dan lokasi proyek</li>
+<li>Kami koordinasikan ke mitra rental yang sesuai</li>
+<li>Penawaran disampaikan secara jelas dan transparan</li>
+<li>Mobilisasi unit dan monitoring selama pekerjaan berlangsung</li>
 </ul>
-</div>
+</section>
 
 <!-- SOCIAL PROOF -->
-<div class="card">
+<section>
 <h2>Bukti Sosial</h2>
-<ul>
-<li>Dipercaya oleh owner proyek konstruksi & tambang</li>
-<li>Bekerja sama dengan berbagai pemilik alat di Kalimantan & luar daerah</li>
-<li>Berpengalaman menangani kebutuhan unit mendesak</li>
-</ul>
+<div class="social-proof">
+Kami telah menangani berbagai kebutuhan pengadaan alat berat untuk proyek konstruksi,
+infrastruktur, dan pekerjaan lapangan lainnya, baik untuk owner proyek kecil hingga kebutuhan
+berskala lebih besar, dengan fokus pada komunikasi yang rapi dan koordinasi yang jelas.
 </div>
+</section>
 
 <!-- CONTACT -->
-<div id="contact" class="card" style="text-align:center">
-<h2>Hubungi Kami</h2>
-<p>📧 borneoengineeringequipment@gmail.com</p>
+<section id="contact">
+<h2>Kontak</h2>
+<p>WhatsApp: 0821 9072 4298</p>
+<p>Email: borneoengineeringequipment@gmail.com</p>
 
-<div class="cta">
-<a class="owner" href="https://wa.me/6282190724298?text=Halo%20kami%20owner%20proyek%20ingin%20konsultasi%20kebutuhan%20alat%20berat" target="_blank">
+<div class="contact-box">
+<a class="owner" href="https://wa.me/6282190724298?text=Saya%20owner%20proyek%20ingin%20konsultasi" target="_blank">
 Chat Owner Proyek
 </a>
-
-<a class="rental" href="https://wa.me/6282190724298?text=Halo%20kami%20pemilik%20alat%20berat%20ingin%20kerja%20sama" target="_blank">
+<a class="rental" href="https://wa.me/6282190724298?text=Saya%20pemilik%20alat%20ingin%20kerja%20sama" target="_blank">
 Chat Pemilik Alat
 </a>
 </div>
-</div>
+</section>
 
 <footer>
-© 2026 Borneo Engineering Equipment<br>
-Independent Heavy Equipment Coordinator
+© 2026 Borneo Engineering Equipment — Koordinator & Mitra Pengadaan Alat Berat
 </footer>
 
 </body>
