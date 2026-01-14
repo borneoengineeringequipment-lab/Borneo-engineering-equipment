@@ -8,22 +8,22 @@
 <style>
 *{
 margin:0;padding:0;box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif
+font-family:"Segoe UI", Arial, sans-serif;
 }
 
 body{
-background:#f8fafc;
-color:#0f172a;
-line-height:1.6
+background:#ffffff;
+color:#1e293b;
+line-height:1.7;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
-background:#ffffff;
 position:sticky;
 top:0;
+background:#ffffff;
+border-bottom:1px solid #e5e7eb;
 z-index:1000;
-box-shadow:0 2px 8px rgba(0,0,0,.06)
 }
 
 .header-inner{
@@ -32,126 +32,158 @@ margin:auto;
 padding:16px 20px;
 display:flex;
 justify-content:space-between;
-align-items:center
+align-items:center;
 }
 
 .logo{
-font-weight:bold;
+font-weight:700;
 font-size:18px;
-color:#16a34a
+color:#f97316;
+letter-spacing:0.5px;
 }
 
 nav{
 display:flex;
-gap:20px
+gap:22px;
 }
 
 nav a{
 text-decoration:none;
-color:#0f172a;
-font-size:14px
+color:#334155;
+font-size:14px;
+font-weight:500;
 }
 
-nav a:hover{
-color:#16a34a
-}
+nav a:hover{color:#f97316}
 
 .menu-toggle{
 display:none;
 font-size:26px;
-cursor:pointer
+cursor:pointer;
+color:#f97316;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
 max-width:1200px;
-margin:60px auto;
-padding:0 20px
+margin:80px auto;
+padding:0 20px;
 }
 
 .hero h1{
 font-size:34px;
-margin-bottom:15px;
-color:#16a34a
+margin-bottom:16px;
+color:#f97316;
 }
 
 .hero p{
 font-size:16px;
-max-width:700px;
-color:#334155
+max-width:760px;
+color:#475569;
 }
 
-.btn{
+.btn-main{
 display:inline-block;
-margin-top:20px;
-background:#16a34a;
+margin-top:26px;
+background:#f97316;
 color:white;
-padding:14px 28px;
-border-radius:8px;
+padding:14px 32px;
+border-radius:10px;
 text-decoration:none;
-font-weight:bold
+font-weight:600;
 }
 
-/* ===== SECTION ===== */
+/* SECTION */
 section{
 max-width:1200px;
-margin:80px auto;
-padding:0 20px
+margin:90px auto;
+padding:0 20px;
 }
 
 h2{
 font-size:26px;
 margin-bottom:20px;
-color:#16a34a
+color:#f97316;
 }
 
 p{
 font-size:15px;
-color:#334155
+color:#475569;
 }
 
-/* ===== GRID ===== */
+/* ICON LIST */
+.icon-list{
+list-style:none;
+margin-top:14px;
+}
+
+.icon-list li{
+display:flex;
+align-items:flex-start;
+gap:10px;
+margin-bottom:12px;
+font-size:15px;
+color:#475569;
+}
+
+.icon{
+color:#f97316;
+font-weight:bold;
+margin-top:2px;
+}
+
+/* SERVICES */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px
+gap:20px;
 }
 
 .card{
-background:white;
+background:#ffffff;
 padding:22px;
 border-radius:14px;
-box-shadow:0 4px 14px rgba(0,0,0,.06)
+border:1px solid #e5e7eb;
+font-size:14px;
 }
 
-/* ===== CTA BUTTONS ===== */
-.cta-group{
+/* CTA SMALL */
+.cta-small{
 margin-top:20px;
 display:flex;
-gap:15px;
-flex-wrap:wrap
+gap:12px;
+flex-wrap:wrap;
 }
 
-.cta-owner{
-background:#16a34a;
-color:white
+.btn-small{
+padding:10px 18px;
+font-size:13px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
 }
 
-.cta-rental{
-background:#0ea5e9;
-color:white
+.owner{
+background:#f97316;
+color:white;
 }
 
-/* ===== FOOTER ===== */
+.rental{
+background:#fb923c;
+color:white;
+}
+
+/* FOOTER */
 footer{
 background:#020617;
 color:#cbd5e1;
 text-align:center;
 padding:30px 20px;
-font-size:13px
+font-size:13px;
+line-height:1.6;
 }
 
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media(max-width:768px){
 
 nav{
@@ -162,42 +194,27 @@ position:absolute;
 top:60px;
 right:20px;
 width:200px;
-padding:15px;
+padding:16px;
 border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,.15)
+border:1px solid #e5e7eb;
 }
 
-nav.active{
-display:flex
-}
+nav.active{display:flex}
+.menu-toggle{display:block}
 
-.menu-toggle{
-display:block
-}
+.hero h1{font-size:24px}
+.hero p{font-size:14px}
 
-.hero h1{
-font-size:24px
-}
+h2{font-size:20px}
+p, .icon-list li{font-size:14px}
 
-.hero p{
-font-size:14px
-}
-
-h2{
-font-size:20px
-}
-
-p{
-font-size:14px
-}
-
-.btn{
+.btn-main{
 width:100%;
-text-align:center
+text-align:center;
 }
 
-.cta-group{
-flex-direction:column
+.cta-small{
+flex-direction:column;
 }
 }
 </style>
@@ -228,14 +245,14 @@ document.querySelector("nav").classList.toggle("active");
 
 <!-- HERO -->
 <div id="home" class="hero">
-<h1>Koordinator & Penyedia Alat Berat</h1>
+<h1>Koordinator Penyedia Alat Berat</h1>
 <p>
-Borneo Engineering Equipment adalah penyedia dan koordinator alat berat yang bekerja
-secara independen dan profesional, menghubungkan owner proyek dengan perusahaan rental
-alat berat terpercaya.
+Borneo Engineering Equipment adalah koordinator independen penyedia alat berat
+yang menghubungkan owner proyek dengan pemilik alat dan perusahaan rental terpercaya
+melalui sistem kerja profesional, transparan, dan efisien.
 </p>
-<a class="btn" href="https://wa.me/6282190724298" target="_blank">
-Konsultasi Proyek via WhatsApp
+<a class="btn-main" href="https://wa.me/6282190724298" target="_blank">
+Konsultasi Proyek
 </a>
 </div>
 
@@ -243,15 +260,14 @@ Konsultasi Proyek via WhatsApp
 <section id="about">
 <h2>Tentang Kami</h2>
 <p>
-Kami berfokus pada koordinasi penyediaan alat berat dengan jaringan multi-rental,
-memberikan solusi cepat, efisien, dan kompetitif untuk kebutuhan proyek konstruksi,
-mining, dan industrial.
+Kami berfokus pada koordinasi penyediaan alat berat lintas kepemilikan dan multi-rental,
+memberikan fleksibilitas unit, kecepatan respon, serta solusi terbaik sesuai kebutuhan proyek.
 </p>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-<h2>Layanan & Unit yang Kami Support</h2>
+<h2>Layanan & Dukungan Unit</h2>
 <div class="grid">
 <div class="card">Excavator (PC75 – PC400)</div>
 <div class="card">Bulldozer (D6 – D8)</div>
@@ -262,13 +278,12 @@ mining, dan industrial.
 <div class="card">Truck Crane</div>
 </div>
 
-<div class="cta-group">
-<a class="btn cta-owner" href="https://wa.me/6282190724298?text=Saya%20owner%20butuh%20alat%20berat" target="_blank">
-Saya Owner Proyek
+<div class="cta-small">
+<a class="btn-small owner" href="https://wa.me/6282190724298?text=Saya%20owner%20butuh%20alat%20berat" target="_blank">
+Chat Owner Proyek
 </a>
-
-<a class="btn cta-rental" href="https://wa.me/6282190724298?text=Saya%20perusahaan%20rental%20ingin%20kerja%20sama" target="_blank">
-Saya Perusahaan Rental
+<a class="btn-small rental" href="https://wa.me/6282190724298?text=Saya%20pemilik%20alat%20ingin%20kerja%20sama" target="_blank">
+Chat Pemilik Alat
 </a>
 </div>
 </section>
@@ -276,23 +291,23 @@ Saya Perusahaan Rental
 <!-- WHY -->
 <section id="why">
 <h2>Kenapa Memilih Kami</h2>
-<div class="grid">
-<div class="card">Fokus koordinasi alat berat secara profesional</div>
-<div class="card">Jaringan multi-rental untuk unit lebih cepat</div>
-<div class="card">Harga kompetitif dan transparan</div>
-<div class="card">Komunikasi satu pintu, efisien & aman</div>
-</div>
+<ul class="icon-list">
+<li><span class="icon">•</span> Sistem koordinasi satu pintu yang profesional dan terkontrol</li>
+<li><span class="icon">•</span> Akses luas ke pemilik alat dan jaringan rental terpercaya</li>
+<li><span class="icon">•</span> Skema harga kompetitif dan transparan bagi owner proyek</li>
+<li><span class="icon">•</span> Fokus pada kelancaran proyek, bukan sekadar penyediaan unit</li>
+</ul>
 </section>
 
 <!-- WORKFLOW -->
 <section id="workflow">
 <h2>Cara Kerja Kami</h2>
-<div class="grid">
-<div class="card">1. Owner menyampaikan kebutuhan</div>
-<div class="card">2. Kami koordinasikan ke rental</div>
-<div class="card">3. Penawaran terbaik</div>
-<div class="card">4. Mobilisasi & monitoring</div>
-</div>
+<ul class="icon-list">
+<li><span class="icon">•</span> Owner menyampaikan kebutuhan unit, lokasi, dan durasi pekerjaan</li>
+<li><span class="icon">•</span> Kami melakukan koordinasi ke pemilik alat dan mitra rental</li>
+<li><span class="icon">•</span> Owner menerima penawaran terbaik secara terbuka dan jelas</li>
+<li><span class="icon">•</span> Mobilisasi unit serta monitoring selama proyek berjalan</li>
+</ul>
 </section>
 
 <!-- CONTACT -->
@@ -301,8 +316,8 @@ Saya Perusahaan Rental
 <p>📞 WhatsApp: 0821 9072 4298</p>
 <p>📧 Email: borneoengineeringequipment@gmail.com</p>
 
-<a class="btn" href="https://wa.me/6282190724298" target="_blank">
-Hubungi Sekarang
+<a class="btn-main" href="https://wa.me/6282190724298" target="_blank">
+Hubungi Kami
 </a>
 </section>
 
