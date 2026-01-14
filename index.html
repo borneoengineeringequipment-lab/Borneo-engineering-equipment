@@ -1,253 +1,144 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Borneo Engineering Equipment</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #1f2933;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-      background: #0f172a;
-      padding: 14px 16px;
-    }
-
-    .nav-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .logo-area img {
-      height: 40px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 16px;
-      padding: 0;
-      margin: 0;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      background: #020617;
-      color: #fff;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 15px;
-      color: #cbd5e1;
-    }
-
-    /* ===== SECTION ===== */
-    section {
-      padding: 50px 20px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #0f172a;
-    }
-
-    /* ===== SERVICES ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      border: 1px solid #e5e7eb;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    /* ===== BENEFITS ===== */
-    .benefits ul {
-      max-width: 600px;
-      margin: auto;
-      padding-left: 20px;
-    }
-
-    /* ===== CTA ===== */
-    .cta {
-      background: #0f172a;
-      color: #fff;
-      text-align: center;
-    }
-
-    .cta a {
-      display: inline-block;
-      margin-top: 15px;
-      background: #22c55e;
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #020617;
-      color: #94a3b8;
-      text-align: center;
-      padding: 14px;
-      font-size: 13px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borneo Engineering Equipment</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: #1f2937;
+            color: #fff;
+            padding: 20px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: auto;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+        section {
+            padding: 60px 10%;
+        }
+        .hero {
+            background: #f3f4f6;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: auto;
+        }
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+        .services ul {
+            list-style: none;
+            padding: 0;
+        }
+        .services li {
+            margin-bottom: 10px;
+        }
+        footer {
+            background: #1f2937;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .contact {
+            background: #f9fafb;
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-  <div class="nav-container">
-    <div class="logo-area">
-      <img src="logo.png" alt="Borneo Engineering Equipment">
-      <span>Borneo Engineering Equipment</span>
-    </div>
-
     <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">Tentang Kami</a></li>
-        <li><a href="#services">Unit</a></li>
-        <li><a href="#contact">Kontak</a></li>
-      </ul>
+        <div><strong>Borneo Engineering Equipment</strong></div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">Tentang Kami</a>
+            <a href="#services">Layanan</a>
+            <a href="#contact">Kontak</a>
+        </div>
     </nav>
-  </div>
 </header>
 
-<section class="hero" id="home">
-  <h1>Rental Alat Berat Profesional & Terpercaya</h1>
-  <p>
-    Mendukung kebutuhan proyek konstruksi, pertambangan, dan industri
-    dengan unit siap kerja dan layanan responsif.
-  </p>
+<!-- HOME -->
+<section id="home" class="hero">
+    <h1>Borneo Engineering Equipment</h1>
+    <p>
+        Koordinator dan perantara penyediaan alat berat
+        untuk kebutuhan proyek konstruksi, earthwork,
+        dan pekerjaan lapangan lainnya.
+    </p>
 </section>
 
+<!-- TENTANG KAMI (VERSI BARU) -->
 <section id="about">
-  <div class="container">
-    <h2>Tentang Kami</h2>
+    <h2 class="section-title">Tentang Kami</h2>
     <p>
-      Borneo Engineering Equipment adalah perusahaan penyedia jasa rental alat berat
-      yang berkomitmen menghadirkan solusi kerja yang efisien, aman, dan tepat waktu
-      untuk berbagai jenis proyek konstruksi dan industri.
+        <strong>Borneo Engineering Equipment</strong> beroperasi sebagai
+        <strong>perantara penyedia alat berat yang independen dan profesional</strong>.
     </p>
     <p>
-      Kami menyediakan unit alat berat yang terawat dan siap kerja, didukung oleh
-      sistem sewa yang fleksibel serta tim yang responsif dalam memahami kebutuhan
-      setiap klien.
+        Kami berperan sebagai koordinator penyediaan alat berat,
+        menghubungkan kebutuhan proyek di lapangan dengan
+        perusahaan rental alat berat sebagai partner kerja.
     </p>
     <p>
-      Dengan fokus pada kualitas layanan dan kepuasan pelanggan, Borneo Engineering
-      Equipment siap menjadi mitra terpercaya yang membantu kelancaran dan
-      kesuksesan setiap proyek Anda.
+        Dalam setiap kerja sama, kami mengedepankan komunikasi yang jelas,
+        transparansi, serta komitmen untuk memastikan unit berjalan lancar
+        dan kerja sama yang saling menguntungkan.
     </p>
-  </div>
 </section>
 
-<section id="services">
-  <div class="container">
-    <h2>Unit Tersedia</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Excavator</h3>
-        <p>Berbagai kapasitas untuk pekerjaan tanah dan pertambangan.</p>
-      </div>
-      <div class="card">
-        <h3>Mobile Crane</h3>
-        <p>Solusi angkat fleksibel untuk area proyek dinamis.</p>
-      </div>
-      <div class="card">
-        <h3>Crawler Crane</h3>
-        <p>Kapasitas besar untuk pekerjaan berat dan jangka panjang.</p>
-      </div>
-      <div class="card">
-        <h3>Dump Truck</h3>
-        <p>Mendukung kebutuhan hauling material proyek.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="benefits">
-  <div class="container">
-    <h2>Kenapa Memilih Kami</h2>
+<!-- LAYANAN -->
+<section id="services" class="services">
+    <h2 class="section-title">Layanan Kami</h2>
     <ul>
-      <li>Unit alat berat siap kerja & terawat</li>
-      <li>Sistem sewa fleksibel sesuai kebutuhan proyek</li>
-      <li>Respon cepat dan komunikasi profesional</li>
-      <li>Dukungan pengiriman berbagai wilayah</li>
-      <li>Harga kompetitif & transparan</li>
+        <li>• Koordinasi & perantara penyediaan alat berat</li>
+        <li>• Support unit untuk proyek konstruksi & earthwork</li>
+        <li>• Kerja sama rent to rent dengan perusahaan rental</li>
+        <li>• Konsultasi kebutuhan alat berat proyek</li>
     </ul>
-  </div>
 </section>
 
-<section class="cta" id="contact">
-  <div class="container">
-    <h2>Butuh Alat Berat untuk Proyek Anda?</h2>
-    <p>Hubungi kami untuk konsultasi kebutuhan unit dan jadwal kerja.</p>
-    <a href="https://wa.me/6282190724298" target="_blank">Hubungi Sekarang</a>
-  </div>
+<!-- KONTAK -->
+<section id="contact" class="contact">
+    <h2 class="section-title">Kontak</h2>
+    <p>
+        Untuk informasi kerja sama dan ketersediaan unit,
+        silakan hubungi kami melalui WhatsApp:
+    </p>
+    <p>
+        <strong>📞 WhatsApp: 082190724298</strong>
+    </p>
 </section>
 
 <footer>
-  © 2026 Borneo Engineering Equipment • All Rights Reserved
+    <p>
+        © 2026 Borneo Engineering Equipment <br>
+        Independent & Professional Heavy Equipment Coordinator
+    </p>
 </footer>
 
 </body>
