@@ -8,7 +8,7 @@
 <style>
 *{
 margin:0;padding:0;box-sizing:border-box;
-font-family: "Segoe UI", Arial, sans-serif;
+font-family:"Segoe UI", Arial, sans-serif;
 }
 
 body{
@@ -17,7 +17,7 @@ color:#1e293b;
 line-height:1.7;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
 position:sticky;
 top:0;
@@ -37,25 +37,23 @@ align-items:center;
 
 .logo{
 font-weight:700;
-font-size:16px;
+font-size:15px;
 color:#f97316;
-letter-spacing:.3px;
+letter-spacing:.4px;
 }
 
 nav{
 display:flex;
-gap:20px;
+gap:18px;
 }
 
 nav a{
 text-decoration:none;
-color:#1e293b;
 font-size:14px;
+color:#1e293b;
 }
 
-nav a:hover{
-color:#f97316;
-}
+nav a:hover{color:#f97316}
 
 .menu-toggle{
 display:none;
@@ -63,26 +61,33 @@ font-size:26px;
 cursor:pointer;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
 max-width:1200px;
 margin:40px auto;
-padding:60px 20px;
-border-radius:18px;
+padding:70px 20px;
+border-radius:20px;
 background:
-linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)),
+linear-gradient(rgba(255,255,255,.93),rgba(255,255,255,.93)),
 url("https://images.unsplash.com/photo-1590650153855-d9e808231d41") center/cover no-repeat;
 }
 
 .hero h1{
 font-size:34px;
 color:#f97316;
-margin-bottom:15px;
+margin-bottom:12px;
+}
+
+.hero h3{
+font-weight:500;
+font-size:17px;
+color:#334155;
+margin-bottom:12px;
 }
 
 .hero p{
 max-width:720px;
-font-size:16px;
+font-size:15px;
 color:#475569;
 }
 
@@ -98,10 +103,10 @@ font-weight:600;
 font-size:14px;
 }
 
-/* ===== SECTION ===== */
+/* SECTION */
 section{
 max-width:1200px;
-margin:70px auto;
+margin:80px auto;
 padding:0 20px;
 }
 
@@ -116,18 +121,13 @@ font-size:15px;
 color:#475569;
 }
 
-/* ===== LIST STYLE ===== */
-.list{
-margin-top:10px;
-}
-
 .list li{
 margin-bottom:10px;
 font-size:15px;
 color:#334155;
 }
 
-/* ===== SERVICES ===== */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -140,10 +140,9 @@ border:1px solid #e5e7eb;
 padding:20px;
 border-radius:14px;
 font-size:14px;
-color:#334155;
 }
 
-/* ===== CTA ===== */
+/* CTA */
 .cta-group{
 margin-top:20px;
 display:flex;
@@ -151,25 +150,18 @@ gap:14px;
 flex-wrap:wrap;
 }
 
-.cta-owner{
-background:#f97316;
-color:white;
-}
+.cta-owner{background:#f97316;color:white}
+.cta-rental{background:#fb923c;color:white}
 
-.cta-rental{
-background:#fb923c;
-color:white;
-}
-
-/* ===== CONTACT ===== */
-.contact-box{
+/* BOX */
+.box{
 background:#fff7ed;
 border:1px solid #fed7aa;
 padding:24px;
 border-radius:16px;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
 margin-top:80px;
 background:#020617;
@@ -179,9 +171,8 @@ padding:26px 20px;
 font-size:13px;
 }
 
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media(max-width:768px){
-
 nav{
 display:none;
 flex-direction:column;
@@ -194,36 +185,18 @@ border-radius:12px;
 padding:14px;
 width:200px;
 }
-
-nav.active{
-display:flex;
-}
-
-.menu-toggle{
-display:block;
-}
+nav.active{display:flex}
+.menu-toggle{display:block}
 
 .hero{
-padding:40px 20px;
+padding:45px 20px;
 }
+.hero h1{font-size:24px}
+.hero h3{font-size:14px}
+.hero p{font-size:14px}
 
-.hero h1{
-font-size:24px;
-}
-
-.hero p{
-font-size:14px;
-}
-
-h2{
-font-size:20px;
-}
-
-.btn{
-font-size:13px;
-padding:10px 18px;
-width:auto;
-}
+h2{font-size:20px}
+.btn{font-size:13px;padding:10px 18px}
 }
 </style>
 
@@ -246,6 +219,7 @@ document.querySelector("nav").classList.toggle("active");
 <a href="#services">Layanan</a>
 <a href="#why">Kenapa Kami</a>
 <a href="#workflow">Cara Kerja</a>
+<a href="#faq">FAQ</a>
 <a href="#contact">Kontak</a>
 </nav>
 </div>
@@ -253,23 +227,32 @@ document.querySelector("nav").classList.toggle("active");
 
 <!-- HERO -->
 <div id="home" class="hero">
-<h1>Koordinator & Penyedia Alat Berat</h1>
-<p>
-Borneo Engineering Equipment adalah koordinator penyedia alat berat independen dan profesional
-yang menghubungkan owner proyek dengan perusahaan rental alat berat terpercaya.
-</p>
-<a class="btn" href="https://wa.me/6282190724298" target="_blank">
-Chat via WhatsApp
-</a>
+<h1>Koordinator Penyedia Alat Berat Independen</h1>
+<h3>Menghubungkan Owner Proyek dengan Pemilik Alat Berat Terpercaya</h3>
+<p>Cepat · Transparan · Terkoordinasi</p>
+<a class="btn" href="https://wa.me/6282190724298" target="_blank">Chat via WhatsApp</a>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
 <h2>Tentang Kami</h2>
 <p>
-Kami berperan sebagai penghubung dan koordinator alat berat dengan jaringan multi-rental,
-membantu owner mendapatkan unit yang tepat, cepat, dan kompetitif tanpa proses rumit.
+Borneo Engineering Equipment berperan sebagai koordinator penyedia alat berat yang bekerja
+secara independen dan profesional, membantu owner proyek mendapatkan unit yang sesuai
+melalui jaringan mitra pemilik alat dan perusahaan rental terpercaya.
 </p>
+</section>
+
+<!-- TRUST -->
+<section>
+<h2>Kenapa Owner & Pemilik Alat Mempercayai Kami</h2>
+<ul class="list">
+<li>• Koordinator penyedia alat berat independen & profesional</li>
+<li>• Jaringan mitra rental dan pemilik alat di berbagai wilayah</li>
+<li>• Kontrak langsung antara owner proyek dan pemilik unit</li>
+<li>• Transparansi harga dan skema kerja sejak awal</li>
+<li>• Satu pintu komunikasi untuk efisiensi proyek</li>
+</ul>
 </section>
 
 <!-- SERVICES -->
@@ -287,10 +270,10 @@ membantu owner mendapatkan unit yang tepat, cepat, dan kompetitif tanpa proses r
 
 <div class="cta-group">
 <a class="btn cta-owner" href="https://wa.me/6282190724298?text=Saya%20owner%20butuh%20alat%20berat" target="_blank">
-Owner Proyek
+Saya Owner Proyek
 </a>
-<a class="btn cta-rental" href="https://wa.me/6282190724298?text=Saya%20perusahaan%20rental%20ingin%20kerja%20sama" target="_blank">
-Perusahaan Rental
+<a class="btn cta-rental" href="https://wa.me/6282190724298?text=Saya%20pemilik%20alat%20ingin%20kerja%20sama" target="_blank">
+Saya Pemilik / Rental Alat
 </a>
 </div>
 </section>
@@ -299,10 +282,11 @@ Perusahaan Rental
 <section id="why">
 <h2>Kenapa Memilih Kami</h2>
 <ul class="list">
-<li>• Koordinator alat berat independen & profesional</li>
-<li>• Jaringan multi-rental untuk ketersediaan unit lebih cepat</li>
-<li>• Harga kompetitif dan transparan untuk owner & rental</li>
-<li>• Komunikasi satu pintu, lebih aman dan efisien</li>
+<li>• Fokus sebagai koordinator alat berat</li>
+<li>• Akses ke banyak pemilik alat</li>
+<li>• Harga kompetitif dan transparan</li>
+<li>• Proses rapi dan terkontrol</li>
+<li>• Pendampingan selama proyek berjalan</li>
 </ul>
 </section>
 
@@ -310,23 +294,43 @@ Perusahaan Rental
 <section id="workflow">
 <h2>Cara Kerja Kami</h2>
 <ul class="list">
-<li>• Owner menyampaikan kebutuhan unit dan lokasi proyek</li>
-<li>• Kami koordinasikan ke mitra rental yang sesuai</li>
-<li>• Penyampaian penawaran terbaik dan transparan</li>
-<li>• Mobilisasi unit dan monitoring selama proyek berjalan</li>
+<li>• Owner menyampaikan kebutuhan unit</li>
+<li>• Koordinasi ke mitra pemilik alat</li>
+<li>• Penyampaian opsi dan penawaran</li>
+<li>• Kesepakatan langsung owner & pemilik unit</li>
+<li>• Monitoring mobilisasi dan operasional</li>
+</ul>
+</section>
+
+<!-- SOP -->
+<section>
+<h2>Standar Kerja Kami</h2>
+<ul class="list">
+<li>• Setiap kebutuhan dicatat dan dikonfirmasi tertulis</li>
+<li>• Penawaran transparan sesuai kondisi unit</li>
+<li>• Tidak ada perubahan sepihak</li>
+<li>• Komunikasi satu pintu</li>
+</ul>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+<h2>Pertanyaan Umum</h2>
+<ul class="list">
+<li><strong>Apakah memiliki unit sendiri?</strong><br>Kami fokus sebagai koordinator dan bekerja sama dengan mitra pemilik unit.</li>
+<li><strong>Bagaimana sistem kontrak?</strong><br>Kontrak dilakukan langsung antara owner proyek dan pemilik unit.</li>
+<li><strong>Apakah bisa luar kota/pulau?</strong><br>Bisa, tergantung ketersediaan dan mobilisasi.</li>
+<li><strong>Apakah harga bisa disesuaikan?</strong><br>Kami upayakan opsi terbaik sesuai kebutuhan dan anggaran.</li>
 </ul>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
 <h2>Kontak</h2>
-<div class="contact-box">
+<div class="box">
 <p>📞 WhatsApp: 0821 9072 4298</p>
 <p>📧 Email: borneoengineeringequipment@gmail.com</p>
-
-<a class="btn" href="https://wa.me/6282190724298" target="_blank">
-Hubungi Kami
-</a>
+<a class="btn" href="https://wa.me/6282190724298" target="_blank">Hubungi Kami</a>
 </div>
 </section>
 
