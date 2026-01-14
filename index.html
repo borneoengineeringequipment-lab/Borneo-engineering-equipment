@@ -3,296 +3,274 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Borneo Engineering Equipment</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<title>Borneo Engineering Equipment | Heavy Equipment Coordination Partner</title>
+<meta name="description" content="Perantara penyediaan alat berat independen dan profesional untuk proyek konstruksi, mining, dan industri di Indonesia.">
 
 <style>
-:root{
---dark:#020617;
---primary:#0f172a;
---accent:#f97316;
---text:#e5e7eb;
---muted:#94a3b8;
-}
-
-*{box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:var(--dark);
-color:var(--text);
-display:flex;
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(120deg,#050914,#0b1220);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
 }
 
-/* SIDEBAR */
-.sidebar{
-width:240px;
-min-height:100vh;
-background:#020617;
-padding:30px 20px;
-position:fixed;
-border-right:1px solid rgba(255,255,255,.05);
+/* ===== MOBILE HEADER ===== */
+.mobile-header{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  z-index:1000;
+  background:#0b1220;
+  padding:14px 18px;
+  justify-content:space-between;
+  align-items:center;
+}
+.mobile-header .logo{
+  font-weight:700;
+  font-size:15px;
+  line-height:1.2;
+}
+.hamburger{
+  font-size:28px;
+  cursor:pointer;
 }
 
-.brand{
-font-size:18px;
-font-weight:700;
-margin-bottom:40px;
+/* ===== SIDEBAR ===== */
+#sidebar{
+  width:240px;
+  height:100vh;
+  position:fixed;
+  left:0;top:0;
+  background:#0b1220;
+  padding:36px 20px;
 }
-
-.menu a{
-display:block;
-color:var(--muted);
-padding:12px 0;
-text-decoration:none;
-border-left:3px solid transparent;
-padding-left:12px;
-transition:.3s;
+#sidebar h1{
+  font-size:20px;
+  margin-bottom:36px;
 }
-
-.menu a:hover{
-color:#fff;
-border-color:var(--accent);
+#sidebar a{
+  display:block;
+  margin:14px 0;
+  text-decoration:none;
+  color:#aaa;
+  font-size:15px;
 }
+#sidebar a:hover{color:#fff}
 
-/* MAIN */
+/* ===== MAIN ===== */
 .main{
-margin-left:240px;
-width:100%;
+  margin-left:240px;
+  padding:90px 60px;
 }
 
-/* HERO VIDEO */
-.hero{
-position:relative;
-min-height:100vh;
-overflow:hidden;
-display:flex;
-align-items:center;
-padding:0 8%;
-}
-
-.hero video{
-position:absolute;
-top:0;left:0;
-width:100%;height:100%;
-object-fit:cover;
-z-index:-2;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(2,6,23,.75);
-z-index:-1;
-}
-
+/* ===== HERO ===== */
 .hero h1{
-font-size:46px;
-line-height:1.2;
-margin-bottom:20px;
+  font-size:62px;
+  line-height:1.1;
+  max-width:760px;
 }
-
 .hero p{
-max-width:720px;
-font-size:18px;
-color:var(--muted);
-margin-bottom:35px;
+  margin-top:18px;
+  font-size:18px;
+  max-width:560px;
+  color:#ccc;
 }
 
-/* BUTTON */
+/* ===== BUTTON ===== */
 .btn{
-display:inline-block;
-padding:15px 34px;
-border-radius:10px;
-font-weight:600;
-margin-right:12px;
+  display:inline-block;
+  margin-top:32px;
+  padding:16px 30px;
+  border-radius:12px;
+  font-weight:600;
+  text-decoration:none;
 }
-
 .btn-wa{background:#25D366;color:#fff}
-.btn-accent{background:var(--accent);color:#fff}
+.btn-proposal{background:#ff7a18;color:#fff;margin-left:10px}
 
-/* SECTION */
-section{
-padding:100px 8%;
-}
-
+/* ===== SECTION ===== */
+section{margin-top:120px}
 .section-title{
-margin-bottom:50px;
+  font-size:32px;
+  margin-bottom:18px;
+}
+.section-text{
+  font-size:16px;
+  color:#ccc;
+  max-width:760px;
+  line-height:1.7;
 }
 
-.section-title h2{
-font-size:34px;
-margin-bottom:10px;
+/* ===== UNIT ===== */
+.unit-list{
+  columns:2;
+  margin-top:20px;
+}
+.unit-list li{
+  margin-bottom:10px;
+  font-size:15px;
 }
 
-.section-title p{
-color:var(--muted);
-max-width:700px;
+/* ===== FLOATING WA ===== */
+.floating-wa{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:600;
+  text-decoration:none;
+  z-index:1000;
+  box-shadow:0 8px 20px rgba(0,0,0,.3);
 }
 
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
+/* ===== ANIMATION ===== */
+.fade-up{
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s;
+}
+.fade-up.show{
+  opacity:1;
+  transform:none;
 }
 
-.card{
-background:rgba(255,255,255,.02);
-border:1px solid rgba(255,255,255,.06);
-padding:30px;
-border-radius:18px;
-transition:.4s;
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .hero h1{font-size:48px}
 }
-
-.card:hover{
-transform:translateY(-8px);
-border-color:var(--accent);
-box-shadow:0 20px 40px rgba(0,0,0,.6);
-}
-
-/* CTA */
-.cta{
-background:linear-gradient(135deg,#020617,#020617);
-text-align:center;
-border-top:1px solid rgba(255,255,255,.06);
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px;
-font-size:13px;
-color:var(--muted);
-}
-
-/* WA FLOAT */
-.wa-float{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:#fff;
-padding:14px 22px;
-border-radius:50px;
-font-weight:600;
-box-shadow:0 10px 25px rgba(0,0,0,.6);
-z-index:999;
-}
-
-/* RESPONSIVE */
-@media(max-width:800px){
-.sidebar{position:relative;width:100%}
-.main{margin-left:0}
+@media(max-width:768px){
+  .mobile-header{display:flex}
+  #sidebar{
+    left:-100%;
+    top:56px;
+    height:calc(100vh - 56px);
+    transition:.3s;
+  }
+  #sidebar.active{left:0}
+  .main{
+    margin-left:0;
+    padding:100px 20px;
+  }
+  .hero h1{font-size:34px}
+  .hero p{font-size:15px}
+  .unit-list{columns:1}
 }
 </style>
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-<div class="brand">BORNEO<br>ENGINEERING</div>
-<div class="menu">
-<a href="#home">Home</a>
-<a href="#about">Tentang Kami</a>
-<a href="#services">Layanan</a>
-<a href="#units">Unit</a>
-<a href="#contact">Kontak</a>
-</div>
+<!-- MOBILE HEADER -->
+<div class="mobile-header">
+  <div class="logo">BORNEO<br>ENGINEERING</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
 </div>
 
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <h1>BORNEO<br>ENGINEERING</h1>
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#about" onclick="closeMenu()">Tentang Kami</a>
+  <a href="#services" onclick="closeMenu()">Layanan</a>
+  <a href="#units" onclick="closeMenu()">Unit</a>
+  <a href="#contact" onclick="closeMenu()">Kontak</a>
+</nav>
+
+<!-- MAIN -->
 <div class="main">
 
-<!-- HERO -->
-<section id="home" class="hero">
-<video autoplay muted loop>
-<source src="https://cdn.coverr.co/videos/coverr-excavator-working-on-site-4108/1080p.mp4" type="video/mp4">
-</video>
+<section id="home" class="hero fade-up">
+  <h1>Heavy Equipment Coordination Partner</h1>
+  <p>
+    Perantara penyediaan alat berat independen dan profesional,
+    menjembatani kebutuhan owner proyek dengan perusahaan rental terpercaya
+    dengan skema harga kompetitif dan transparan.
+  </p>
 
-<div data-aos="fade-right">
-<h1>Heavy Equipment<br>Coordination Partner</h1>
-<p>
-Perantara penyediaan alat berat independen untuk sektor
-konstruksi, mining, dan industrial project.
-</p>
+  <a class="btn btn-wa" href="https://wa.me/6282190724298?text=Halo%20Borneo%20Engineering%20Equipment,%20saya%20owner%20proyek">
+    WhatsApp Owner
+  </a>
+  <a class="btn btn-proposal" href="Proposal_Borneo_Engineering_Equipment_FINAL.pdf">
+    Download Proposal
+  </a>
+</section>
 
-<a class="btn btn-wa" href="https://wa.me/6282190724298">
-WhatsApp Owner
+<section id="about" class="fade-up">
+  <h2 class="section-title">Tentang Kami</h2>
+  <p class="section-text">
+    Borneo Engineering Equipment adalah perantara penyedia alat berat
+    yang beroperasi secara independen dan profesional. Kami fokus pada
+    efisiensi pengadaan, koordinasi rent to rent, serta memastikan owner
+    mendapatkan solusi unit terbaik sesuai kebutuhan proyek.
+  </p>
+</section>
+
+<section id="services" class="fade-up">
+  <h2 class="section-title">Layanan</h2>
+  <p class="section-text">
+    • Koordinasi penyediaan alat berat proyek<br>
+    • Rent to rent antar perusahaan rental<br>
+    • Negosiasi harga terbaik bagi owner & rental<br>
+    • Dukungan unit lintas wilayah Indonesia
+  </p>
+</section>
+
+<section id="units" class="fade-up">
+  <h2 class="section-title">Unit Alat Berat yang Kami Support</h2>
+  <ul class="unit-list">
+    <li>Excavator PC50 – PC400</li>
+    <li>Long Arm Excavator</li>
+    <li>Bulldozer D3 – D7</li>
+    <li>Wheel Loader WA200 – WA500</li>
+    <li>Dump Truck 6R – 30 Ton</li>
+    <li>Lowbed / Trailer</li>
+    <li>Vibro Roller & Compactor</li>
+    <li>Mobile Crane 25 – 100 Ton</li>
+    <li>Rough Terrain Crane</li>
+    <li>Crawler Crane</li>
+    <li>Forklift 3 – 25 Ton</li>
+    <li>Manlift / Boom Lift</li>
+  </ul>
+</section>
+
+<section id="contact" class="fade-up">
+  <h2 class="section-title">Kontak</h2>
+  <p class="section-text">
+    WhatsApp: 0821 9072 4298<br>
+    Email: <strong>borneoengineeringequipment@gmail.com</strong>
+  </p>
+</section>
+
+</div>
+
+<!-- FLOATING WA -->
+<a class="floating-wa" href="https://wa.me/6282190724298">
+  WhatsApp Kami
 </a>
 
-<a class="btn btn-accent" href="Proposal_Borneo_Engineering_Equipment_FINAL.pdf">
-Download Proposal
-</a>
-</div>
-</section>
+<script>
+function toggleMenu(){
+  document.getElementById("sidebar").classList.toggle("active");
+}
+function closeMenu(){
+  document.getElementById("sidebar").classList.remove("active");
+}
 
-<section id="about">
-<div class="section-title" data-aos="fade-up">
-<h2>Tentang Kami</h2>
-<p>Berbasis industri konstruksi & pertambangan</p>
-</div>
-
-<div class="grid">
-<div class="card" data-aos="fade-up">Perantara alat berat independen & profesional</div>
-<div class="card" data-aos="fade-up" data-aos-delay="100">Jaringan rental terpercaya</div>
-<div class="card" data-aos="fade-up" data-aos-delay="200">Fokus efisiensi & transparansi</div>
-</div>
-</section>
-
-<section id="services">
-<div class="section-title" data-aos="fade-up">
-<h2>Layanan</h2>
-</div>
-
-<div class="grid">
-<div class="card" data-aos="zoom-in">Analisa kebutuhan proyek</div>
-<div class="card" data-aos="zoom-in" data-aos-delay="100">Perbandingan rental</div>
-<div class="card" data-aos="zoom-in" data-aos-delay="200">Koordinasi mobilisasi</div>
-<div class="card" data-aos="zoom-in" data-aos-delay="300">Support operasional</div>
-</div>
-</section>
-
-<section id="units">
-<div class="section-title" data-aos="fade-up">
-<h2>Unit Support</h2>
-</div>
-
-<div class="grid">
-<div class="card">Excavator PC50 – PC400</div>
-<div class="card">Bulldozer D3 – D7</div>
-<div class="card">Dump Truck 6 roda – 30 ton</div>
-<div class="card">Wheel Loader WA200 – WA500</div>
-<div class="card">Mobile / RT / Crawler Crane</div>
-<div class="card">Forklift & Manlift</div>
-</div>
-</section>
-
-<section id="contact" class="cta">
-<div class="section-title" data-aos="fade-up">
-<h2>Diskusikan Proyek Anda</h2>
-<p>Konstruksi • Mining • Industrial</p>
-</div>
-
-<a class="btn btn-wa" href="https://wa.me/6282190724298">
-WhatsApp Sekarang
-</a>
-</section>
-
-<footer>
-© 2026 Borneo Engineering Equipment<br>
-Independent Heavy Equipment Coordinator
-</footer>
-
-</div>
-
-<a class="wa-float" href="https://wa.me/6282190724298">💬 WhatsApp</a>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init({duration:900,once:true});</script>
+/* SCROLL ANIMATION */
+const items=document.querySelectorAll('.fade-up');
+window.addEventListener('scroll',()=>{
+  items.forEach(el=>{
+    const top=el.getBoundingClientRect().top;
+    if(top<window.innerHeight-100){el.classList.add('show')}
+  })
+});
+</script>
 
 </body>
 </html>
