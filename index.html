@@ -6,12 +6,7 @@
 <title>Borneo Engineering Equipment</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 
 body{
   background:#f1f5f9;
@@ -19,164 +14,89 @@ body{
   line-height:1.7
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
+  position:sticky;top:0;z-index:1000;
   background:#ffffff;
   box-shadow:0 2px 10px rgba(0,0,0,.06)
 }
-
 .header-inner{
-  max-width:1100px;
-  margin:auto;
+  max-width:1100px;margin:auto;
   padding:14px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center
+  display:flex;justify-content:space-between;align-items:center
 }
-
-.logo{
-  font-weight:bold;
-  font-size:16px;
-  color:#f97316
-}
-
-nav{
-  display:flex;
-  gap:22px
-}
-
-nav a{
-  text-decoration:none;
-  color:#1f2937;
-  font-size:13.5px
-}
-
+.logo{font-weight:bold;font-size:16px;color:#f97316}
+nav{display:flex;gap:22px}
+nav a{text-decoration:none;color:#1f2937;font-size:13.5px}
 nav a:hover{color:#f97316}
-
 .menu-toggle{display:none;font-size:26px;cursor:pointer}
 
-/* ===== MAIN CONTAINER ===== */
-.main{
-  max-width:900px;
-  margin:70px auto;
-  padding:0 16px
-}
+/* MAIN */
+.main{max-width:900px;margin:70px auto;padding:0 16px}
 
-/* ===== BOX ===== */
-.box{
-  background:#ffffff;
-  border-radius:16px;
-  padding:36px 34px;
-  margin-bottom:60px;
-  position:relative;
-  box-shadow:0 8px 26px rgba(0,0,0,.06);
-  overflow:hidden
-}
-
-.box h2{
-  font-size:21px;
-  color:#f97316;
-  margin-bottom:14px
-}
-
-.box p{
-  font-size:14px;
-  color:#334155
-}
-
-/* ===== SILUET ===== */
-.silhouette{
-  position:absolute;
-  bottom:-10px;
-  right:-10px;
-  width:220px;
-  opacity:0.04;
-  pointer-events:none
-}
-
-/* ===== LIST ===== */
-.list{
-  margin-top:10px
-}
-
-.list li{
-  font-size:14px;
-  margin-bottom:8px;
-  color:#334155
-}
-
-/* ===== HERO ===== */
+/* HERO */
 .hero{
-  background:#ffffff;
-  border-radius:18px;
-  padding:46px 34px;
-  margin-bottom:70px;
+  background:#ffffff;border-radius:18px;
+  padding:46px 34px;margin-bottom:70px;
   box-shadow:0 10px 30px rgba(0,0,0,.08)
 }
+.hero h1{font-size:26px;color:#f97316;margin-bottom:10px}
+.hero .positioning{font-size:13px;color:#64748b;margin-bottom:12px}
+.hero p{font-size:14.5px;color:#334155;max-width:650px}
 
-.hero h1{
-  font-size:26px;
-  color:#f97316;
-  margin-bottom:10px
+/* BOX */
+.box{
+  background:#ffffff;border-radius:16px;
+  padding:36px 34px;margin-bottom:60px;
+  position:relative;overflow:hidden;
+  box-shadow:0 8px 26px rgba(0,0,0,.06)
+}
+.box h2{font-size:21px;color:#f97316;margin-bottom:14px}
+.box p{font-size:14px;color:#334155}
+
+/* SILUET */
+.silhouette{
+  position:absolute;bottom:-10px;right:-10px;
+  width:220px;opacity:0.04;pointer-events:none
 }
 
-.hero .positioning{
-  font-size:13px;
-  color:#64748b;
-  margin-bottom:12px
-}
+/* LIST */
+.list{margin-top:10px}
+.list li{font-size:14px;margin-bottom:8px;color:#334155}
 
-.hero p{
-  font-size:14.5px;
-  color:#334155;
-  max-width:620px
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px;margin-top:14px
 }
-
-.btn{
-  display:inline-block;
-  margin-top:18px;
-  background:#f97316;
-  color:#ffffff;
-  padding:11px 24px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
+.card{
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:14px;
   font-size:13.5px
 }
 
-/* ===== CTA GROUP ===== */
-.cta-group{
-  margin-top:18px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap
+/* BUTTON */
+.btn{
+  display:inline-block;margin-top:18px;
+  background:#f97316;color:#fff;
+  padding:11px 24px;border-radius:8px;
+  text-decoration:none;font-weight:bold;font-size:13.5px
 }
 
-.cta-alt{
-  background:#fb923c
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
-  text-align:center;
-  font-size:12.5px;
-  color:#64748b;
-  padding:40px 16px
+  text-align:center;font-size:12.5px;
+  color:#64748b;padding:40px 16px
 }
 
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media(max-width:768px){
   nav{
-    display:none;
-    position:absolute;
-    top:60px;
-    right:20px;
-    background:#ffffff;
-    padding:14px;
-    border-radius:12px;
+    display:none;position:absolute;top:60px;right:20px;
+    background:#ffffff;padding:14px;border-radius:12px;
     box-shadow:0 10px 25px rgba(0,0,0,.15);
     flex-direction:column
   }
@@ -202,6 +122,7 @@ function toggleMenu(){
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav>
       <a href="#home">Home</a>
+      <a href="#services">Layanan</a>
       <a href="#about">Tentang</a>
       <a href="#why">Kenapa</a>
       <a href="#workflow">Cara Kerja</a>
@@ -220,11 +141,33 @@ function toggleMenu(){
   </div>
   <p>
     Borneo Engineering Equipment membantu owner proyek mengoordinasikan kebutuhan alat berat
-    melalui jaringan pemilik alat dan rental terpercaya secara independen dan transparan.
+    melalui jaringan pemilik alat dan perusahaan rental terpercaya secara independen dan transparan.
   </p>
-  <a class="btn" href="https://wa.me/6282190724298" target="_blank">
-    Konsultasi Proyek
-  </a>
+  <a class="btn" href="https://wa.me/6282190724298" target="_blank">Konsultasi Proyek</a>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="box">
+  <h2>Layanan & Unit yang Kami Koordinasikan</h2>
+  <div class="grid">
+    <div class="card">Excavator (PC75 – PC400)</div>
+    <div class="card">Bulldozer (D6 – D8)</div>
+    <div class="card">Wheel Loader</div>
+    <div class="card">Dump Truck (20–30 Ton)</div>
+    <div class="card">Crawler Crane</div>
+    <div class="card">Rough Terrain Crane</div>
+    <div class="card">Truck Crane</div>
+  </div>
+</div>
+
+<!-- SOCIAL PROOF -->
+<div class="box">
+  <h2>Dipercaya oleh</h2>
+  <ul class="list">
+    <li>• Mitra rental alat berat wilayah Kalimantan & Jawa</li>
+    <li>• Pemilik alat excavator, crane, dan dump truck</li>
+    <li>• Owner proyek konstruksi, land clearing, dan industrial</li>
+  </ul>
 </div>
 
 <!-- ABOUT -->
@@ -232,11 +175,9 @@ function toggleMenu(){
   <h2>Tentang Kami</h2>
   <p>
     Kami berfokus sebagai koordinator penyediaan alat berat dengan sistem satu pintu,
-    memastikan owner mendapatkan unit yang tepat, cepat, dan kompetitif tanpa harus
-    menghubungi banyak pihak.
+    memastikan kebutuhan owner terpenuhi secara cepat, tepat, dan efisien tanpa harus
+    berhubungan dengan banyak pihak.
   </p>
-
-  <!-- SILUET -->
   <svg class="silhouette" viewBox="0 0 64 64" fill="#f97316">
     <path d="M4 44h56v6H4zM18 36l6-12h8l4 6h10v6H18zM10 30h10l-4 6H10z"/>
   </svg>
@@ -247,11 +188,10 @@ function toggleMenu(){
   <h2>Kenapa Memilih Kami</h2>
   <ul class="list">
     <li>• Koordinator independen tanpa konflik kepentingan</li>
-    <li>• Jaringan multi-rental untuk unit lebih cepat tersedia</li>
+    <li>• Jaringan multi-rental untuk ketersediaan unit lebih cepat</li>
     <li>• Harga kompetitif dan transparan</li>
     <li>• Komunikasi satu pintu yang rapi dan profesional</li>
   </ul>
-
   <svg class="silhouette" viewBox="0 0 64 64" fill="#f97316">
     <path d="M4 44h56v6H4zM18 36l6-12h8l4 6h10v6H18zM10 30h10l-4 6H10z"/>
   </svg>
@@ -262,11 +202,10 @@ function toggleMenu(){
   <h2>Cara Kerja Kami</h2>
   <ul class="list">
     <li>• Owner menyampaikan kebutuhan alat</li>
-    <li>• Kami mencarikan opsi dari mitra terbaik</li>
+    <li>• Kami koordinasikan ke mitra terbaik</li>
     <li>• Owner memilih penawaran paling sesuai</li>
-    <li>• Kontrak langsung owner dengan pemilik alat</li>
+    <li>• Kontrak langsung owner & pemilik alat</li>
   </ul>
-
   <svg class="silhouette" viewBox="0 0 64 64" fill="#f97316">
     <path d="M4 44h56v6H4zM18 36l6-12h8l4 6h10v6H18zM10 30h10l-4 6H10z"/>
   </svg>
@@ -277,15 +216,9 @@ function toggleMenu(){
   <h2>Kontak</h2>
   <p>📞 WhatsApp: 0821 9072 4298</p>
   <p>📧 Email: borneoengineeringequipment@gmail.com</p>
-
-  <div class="cta-group">
-    <a class="btn" href="https://wa.me/6282190724298" target="_blank">
-      Hubungi Kami
-    </a>
-    <a class="btn cta-alt" href="https://wa.me/6282190724298?text=Saya%20pemilik%20alat" target="_blank">
-      Pemilik Alat
-    </a>
-  </div>
+  <a class="btn" href="https://wa.me/6282190724298" target="_blank">
+    Sampaikan Kebutuhan Proyek Anda
+  </a>
 </div>
 
 </div>
