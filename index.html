@@ -3,268 +3,173 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Borneo Engineering Equipment | Heavy Equipment Coordination Partner</title>
-<meta name="description" content="Borneo Engineering Equipment adalah perantara penyediaan alat berat independen dan profesional untuk proyek konstruksi, mining, dan industri di Indonesia.">
+<title>Borneo Engineering Equipment</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:Segoe UI,Arial,sans-serif;
-  background:linear-gradient(120deg,#050914,#0b1220);
-  color:#fff;
-  -webkit-font-smoothing:antialiased;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#0f172a;color:#e5e7eb;line-height:1.6}
+
+/* HEADER */
+header{
+position:fixed;left:0;top:0;height:100vh;width:260px;
+background:#020617;padding:25px 20px;z-index:1000
+}
+.logo{
+font-size:20px;font-weight:bold;color:#22c55e;margin-bottom:40px
+}
+nav a{
+display:block;color:#e5e7eb;text-decoration:none;
+margin:14px 0;font-size:15px
+}
+nav a:hover{color:#22c55e}
+
+/* MOBILE */
+.menu-toggle{
+display:none;font-size:26px;color:#22c55e;cursor:pointer
 }
 
-/* ===== MOBILE HEADER ===== */
-.mobile-header{
-  display:none;
-  position:fixed;
-  top:0;left:0;
-  width:100%;
-  z-index:1000;
-  background:#0b1220;
-  padding:14px 18px;
-  justify-content:space-between;
-  align-items:center;
-}
-.mobile-header .logo{
-  font-weight:700;
-  font-size:14px;
-  line-height:1.2;
-}
-.hamburger{
-  font-size:28px;
-  cursor:pointer;
-}
+/* CONTENT */
+main{margin-left:260px;padding:40px}
+section{margin-bottom:90px}
+h1,h2,h3{color:#22c55e;margin-bottom:15px}
+p{color:#cbd5f5;font-size:14px}
 
-/* ===== SIDEBAR ===== */
-#sidebar{
-  width:240px;
-  height:100vh;
-  position:fixed;
-  left:0;top:0;
-  background:#0b1220;
-  padding:36px 20px;
-}
-#sidebar h1{
-  font-size:18px;
-  margin-bottom:36px;
-  line-height:1.3;
-}
-#sidebar a{
-  display:block;
-  margin:14px 0;
-  text-decoration:none;
-  color:#aaa;
-  font-size:15px;
-}
-#sidebar a:hover{color:#fff}
-
-/* ===== MAIN ===== */
-.main{
-  margin-left:240px;
-  padding:90px 60px;
-}
-
-/* ===== HERO ===== */
-.hero h1{
-  font-size:58px;
-  line-height:1.1;
-  max-width:760px;
-}
-.hero p{
-  margin-top:18px;
-  font-size:17px;
-  max-width:560px;
-  color:#ccc;
-}
-
-/* ===== BUTTON ===== */
 .btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:15px 28px;
-  border-radius:12px;
-  font-weight:600;
-  text-decoration:none;
-}
-.btn-wa{background:#25D366;color:#fff}
-.btn-proposal{background:#ff7a18;color:#fff;margin-left:10px}
-
-/* ===== SECTION ===== */
-section{margin-top:120px}
-.section-title{
-  font-size:30px;
-  margin-bottom:16px;
-}
-.section-text{
-  font-size:16px;
-  color:#ccc;
-  max-width:760px;
-  line-height:1.7;
+display:inline-block;margin-top:15px;
+background:#22c55e;color:#022c22;
+padding:12px 22px;border-radius:6px;
+text-decoration:none;font-weight:bold
 }
 
-/* ===== UNIT ===== */
-.unit-list{
-  columns:2;
-  margin-top:20px;
-}
-.unit-list li{
-  margin-bottom:10px;
-  font-size:15px;
+/* CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{
+background:#020617;padding:22px;border-radius:10px
 }
 
-/* ===== FLOATING WA ===== */
-.floating-wa{
-  position:fixed;
-  bottom:22px;
-  right:22px;
-  background:#25D366;
-  color:#fff;
-  padding:14px 18px;
-  border-radius:50px;
-  font-weight:600;
-  text-decoration:none;
-  z-index:1000;
-  box-shadow:0 8px 20px rgba(0,0,0,.3);
-}
+/* FOOTER */
+footer{text-align:center;font-size:13px;color:#94a3b8;margin-top:80px}
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:1024px){
-  .hero h1{font-size:46px}
-}
-
+/* RESPONSIVE */
 @media(max-width:768px){
-  .mobile-header{display:flex}
-
-  #sidebar{
-    left:-100%;
-    top:56px;
-    height:calc(100vh - 56px);
-    transition:.3s;
-  }
-  #sidebar.active{left:0}
-
-  .main{
-    margin-left:0;
-    padding:100px 20px;
-  }
-  .hero h1{font-size:32px}
-  .hero p{font-size:15px}
-  .unit-list{columns:1}
+header{width:100%;height:auto;position:relative}
+nav{display:none}
+nav.active{display:block}
+.menu-toggle{display:block;margin-bottom:15px}
+main{margin-left:0}
 }
 </style>
+
+<script>
+function toggleMenu(){
+document.querySelector("nav").classList.toggle("active");
+}
+</script>
 </head>
 
 <body>
 
-<!-- MOBILE HEADER -->
-<div class="mobile-header">
-  <div class="logo">
-    BORNEO ENGINEERING<br>
-    EQUIPMENT
-  </div>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-</div>
-
-<!-- SIDEBAR -->
-<nav id="sidebar">
-  <h1>
-    BORNEO ENGINEERING<br>
-    EQUIPMENT
-  </h1>
-  <a href="#home" onclick="closeMenu()">Home</a>
-  <a href="#about" onclick="closeMenu()">Tentang Kami</a>
-  <a href="#services" onclick="closeMenu()">Layanan</a>
-  <a href="#units" onclick="closeMenu()">Unit</a>
-  <a href="#contact" onclick="closeMenu()">Kontak</a>
+<header>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="logo">BORNEO ENGINEERING<br>EQUIPMENT</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">Tentang Kami</a>
+<a href="#services">Layanan</a>
+<a href="#why">Kenapa Kami</a>
+<a href="#workflow">Cara Kerja</a>
+<a href="#contact">Kontak</a>
 </nav>
+</header>
 
-<!-- MAIN -->
-<div class="main">
+<main>
 
-<section id="home" class="hero">
-  <h1>Heavy Equipment Coordination Partner</h1>
-  <p>
-    Perantara penyediaan alat berat independen dan profesional,
-    menjembatani kebutuhan owner proyek dengan perusahaan rental terpercaya
-    melalui koordinasi yang efisien dan harga kompetitif.
-  </p>
+<!-- HOME -->
+<section id="home">
+<h1>Penyedia & Koordinator Alat Berat</h1>
+<p>
+Borneo Engineering Equipment adalah penyedia dan perantara alat berat yang bekerja secara
+independen dan profesional, menghubungkan owner proyek dengan perusahaan rental terbaik.
+</p>
 
-  <a class="btn btn-wa"
-     href="https://wa.me/6282190724298?text=Halo%20Borneo%20Engineering%20Equipment,%20saya%20ingin%20diskusi%20kebutuhan%20alat%20berat">
-    WhatsApp Kami
-  </a>
-
-  <a class="btn btn-proposal"
-     href="Proposal_Borneo_Engineering_Equipment_FINAL.pdf">
-    Download Proposal
-  </a>
+<a class="btn" href="https://wa.me/6282190724298" target="_blank">
+Konsultasi Proyek via WhatsApp
+</a>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
-  <h2 class="section-title">Tentang Kami</h2>
-  <p class="section-text">
-    Borneo Engineering Equipment merupakan penyedia jasa koordinasi
-    pengadaan alat berat yang beroperasi secara independen dan profesional.
-    Kami tidak menyewakan unit secara langsung, melainkan menghubungkan
-    owner proyek dengan mitra rental alat berat terpercaya
-    untuk memastikan efisiensi, kecepatan, dan ketepatan unit.
-  </p>
+<h2>Tentang Kami</h2>
+<p>
+Kami berfokus sebagai koordinator penyedia alat berat dengan jaringan multi-rental.
+Pendekatan kami memastikan owner mendapatkan unit yang sesuai, cepat, dan dengan harga
+yang kompetitif tanpa harus menghubungi banyak rental.
+</p>
+<p style="margin-top:10px">
+Kami bekerja berdasarkan kepercayaan, transparansi, dan komunikasi satu pintu.
+</p>
 </section>
 
+<!-- SERVICES -->
 <section id="services">
-  <h2 class="section-title">Layanan</h2>
-  <p class="section-text">
-    • Koordinasi penyediaan alat berat proyek<br>
-    • Skema kerja sama rent to rent<br>
-    • Negosiasi harga terbaik untuk owner & rental<br>
-    • Dukungan unit lintas wilayah Indonesia
-  </p>
-</section>
-
-<section id="units">
-  <h2 class="section-title">Unit Alat Berat yang Kami Support</h2>
-  <ul class="unit-list">
-    <li>Excavator PC50 – PC400</li>
-    <li>Long Arm Excavator</li>
-    <li>Bulldozer D3 – D7</li>
-    <li>Wheel Loader WA200 – WA500</li>
-    <li>Dump Truck 6R – 30 Ton</li>
-    <li>Lowbed / Trailer</li>
-    <li>Vibro Roller & Compactor</li>
-    <li>Mobile Crane 25 – 100 Ton</li>
-    <li>Rough Terrain Crane</li>
-    <li>Crawler Crane</li>
-    <li>Forklift 3 – 25 Ton</li>
-    <li>Manlift / Boom Lift</li>
-  </ul>
-</section>
-
-<section id="contact">
-  <h2 class="section-title">Kontak</h2>
-  <p class="section-text">
-    WhatsApp: 0821 9072 4298<br>
-    Email: <strong>borneoengineeringequipment@gmail.com</strong>
-  </p>
-</section>
-
+<h2>Layanan Kami</h2>
+<div class="grid">
+<div class="card">Excavator (PC200, PC300, PC400, PC75)</div>
+<div class="card">Bulldozer (D6, D7, D8)</div>
+<div class="card">Wheel Loader</div>
+<div class="card">Dump Truck (20–30 Ton)</div>
+<div class="card">Crawler Crane</div>
+<div class="card">Rough Terrain Crane</div>
+<div class="card">Truck Crane</div>
 </div>
 
-<!-- FLOATING WA -->
-<a class="floating-wa" href="https://wa.me/6282190724298">
-  WhatsApp
+<a class="btn" href="https://wa.me/6282190724298?text=Saya%20owner%20butuh%20alat%20berat" target="_blank">
+Saya Owner Proyek
 </a>
 
-<script>
-function toggleMenu(){
-  document.getElementById("sidebar").classList.toggle("active");
-}
-function closeMenu(){
-  document.getElementById("sidebar").classList.remove("active");
-}
-</script>
+<a class="btn" style="margin-left:10px;background:#38bdf8;color:#020617"
+href="https://wa.me/6282190724298?text=Saya%20perusahaan%20rental%20ingin%20kerja%20sama" target="_blank">
+Saya Perusahaan Rental
+</a>
+</section>
 
+<!-- WHY -->
+<section id="why">
+<h2>Kenapa Owner & Rental Memilih Kami</h2>
+<div class="grid">
+<div class="card">Fokus koordinasi alat berat, bukan sekadar perantara</div>
+<div class="card">Jaringan multi-rental → unit lebih cepat tersedia</div>
+<div class="card">Harga kompetitif untuk owner tanpa merugikan rental</div>
+<div class="card">Komunikasi satu pintu & profesional</div>
+</div>
+</section>
+
+<!-- WORKFLOW -->
+<section id="workflow">
+<h2>Cara Kerja Kami</h2>
+<div class="grid">
+<div class="card">1. Owner menyampaikan kebutuhan unit</div>
+<div class="card">2. Kami koordinasikan ke mitra rental</div>
+<div class="card">3. Penawaran terbaik & transparan</div>
+<div class="card">4. Mobilisasi & monitoring proyek</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Kontak</h2>
+<p>📞 WhatsApp: 0821 9072 4298</p>
+<p>📧 Email: borneoengineeringequipment@gmail.com</p>
+
+<a class="btn" href="https://wa.me/6282190724298" target="_blank">
+Hubungi Sekarang
+</a>
+</section>
+
+<footer>
+© 2026 Borneo Engineering Equipment — Independent Heavy Equipment Coordinator
+</footer>
+
+</main>
 </body>
 </html>
