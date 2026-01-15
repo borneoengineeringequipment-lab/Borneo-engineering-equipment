@@ -16,35 +16,32 @@
 body{
   background:#ffffff;
   color:#1f2937;
-  line-height:1.6;
+  line-height:1.65;
   position:relative;
   overflow-x:hidden;
 }
 
-/* ===== BACKGROUND SILUET ===== */
+/* BACKGROUND SILUET GLOBAL */
 body::before{
   content:"";
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   background-image:url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7");
   background-repeat:no-repeat;
-  background-position:center;
-  background-size:80%;
-  opacity:0.04;
+  background-position:center bottom;
+  background-size:75%;
+  opacity:0.05;
   z-index:-1;
   pointer-events:none;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   background:#ffffff;
   position:sticky;
   top:0;
   z-index:1000;
-  box-shadow:0 2px 10px rgba(0,0,0,.06);
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
 }
 
 .header-inner{
@@ -64,7 +61,7 @@ header{
 
 nav{
   display:flex;
-  gap:20px;
+  gap:22px;
 }
 
 nav a{
@@ -83,17 +80,17 @@ nav a:hover{
   cursor:pointer;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
   max-width:1000px;
-  margin:80px auto;
+  margin:90px auto;
   padding:0 20px;
   text-align:center;
 }
 
 .hero h1{
   font-size:34px;
-  margin-bottom:15px;
+  margin-bottom:18px;
   color:#f97316;
 }
 
@@ -102,7 +99,7 @@ nav a:hover{
   color:#374151;
 }
 
-/* ===== SECTION ===== */
+/* SECTION */
 section{
   max-width:1100px;
   margin:90px auto;
@@ -111,7 +108,7 @@ section{
 
 h2{
   font-size:26px;
-  margin-bottom:20px;
+  margin-bottom:22px;
   color:#f97316;
 }
 
@@ -120,21 +117,31 @@ p{
   color:#374151;
 }
 
-/* ===== CARD BOX ===== */
+/* BOX */
 .box{
-  background:rgba(255,255,255,0.92);
-  padding:28px;
-  border-radius:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  background:rgba(255,255,255,0.94);
+  padding:32px;
+  border-radius:16px;
+  box-shadow:0 12px 32px rgba(0,0,0,.10);
 }
 
-/* ===== UNIT ACCORDION ===== */
+/* LIST */
+ul{
+  padding-left:18px;
+}
+
+li{
+  margin-bottom:10px;
+  font-size:14.5px;
+}
+
+/* UNIT ACCORDION */
 details{
-  background:#fff;
-  border-radius:10px;
-  padding:16px 20px;
+  background:#ffffff;
+  border-radius:12px;
+  padding:18px 22px;
   margin-bottom:14px;
-  box-shadow:0 6px 18px rgba(0,0,0,.08);
+  box-shadow:0 8px 22px rgba(0,0,0,.10);
 }
 
 summary{
@@ -144,25 +151,15 @@ summary{
 }
 
 details p{
-  margin-top:10px;
+  margin-top:12px;
   font-size:14px;
 }
 
-/* ===== LIST ===== */
-ul{
-  padding-left:18px;
-}
-
-li{
-  margin-bottom:8px;
-  font-size:14px;
-}
-
-/* ===== CTA ===== */
+/* CTA */
 .cta{
-  margin-top:25px;
+  margin-top:28px;
   display:flex;
-  gap:15px;
+  gap:16px;
   flex-wrap:wrap;
 }
 
@@ -181,16 +178,16 @@ li{
   background:#0ea5e9;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
   background:#020617;
   color:#cbd5e1;
   text-align:center;
-  padding:30px 20px;
+  padding:32px 20px;
   font-size:13px;
 }
 
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media(max-width:768px){
   nav{
     display:none;
@@ -205,21 +202,11 @@ footer{
     box-shadow:0 10px 30px rgba(0,0,0,.18);
   }
 
-  nav.active{
-    display:flex;
-  }
+  nav.active{display:flex;}
+  .menu-toggle{display:block;}
 
-  .menu-toggle{
-    display:block;
-  }
-
-  .hero h1{
-    font-size:24px;
-  }
-
-  section{
-    margin:70px auto;
-  }
+  .hero h1{font-size:24px;}
+  section{margin:70px auto;}
 }
 </style>
 
@@ -243,46 +230,53 @@ function toggleMenu(){
       <a href="#units">Unit</a>
       <a href="#why">Kenapa Kami</a>
       <a href="#workflow">Cara Kerja</a>
+      <a href="#social">Bukti Sosial</a>
       <a href="#contact">Kontak</a>
     </nav>
   </div>
 </header>
 
-<!-- HOME -->
+<!-- 1. HOME -->
 <div id="home" class="hero">
   <h1>Koordinator Penyedia Alat Berat</h1>
   <p>
-    Borneo Engineering Equipment adalah pengatur dan koordinator alat berat
-    yang bekerja secara independen dan profesional untuk proyek kecil hingga besar.
+    Borneo Engineering Equipment merupakan koordinator independen dalam penyediaan alat berat,
+    yang berfokus pada pengaturan kebutuhan proyek secara profesional, efisien, dan terstruktur,
+    untuk berbagai skala pekerjaan konstruksi, tambang, dan EPC.
   </p>
 </div>
 
-<!-- ABOUT -->
+<!-- 2. TENTANG KAMI -->
 <section id="about">
   <div class="box">
     <h2>Tentang Kami</h2>
     <p>
-      Kami bukan pemilik alat dan bukan perusahaan rental.
-      Kami adalah koordinator independen yang menghubungkan owner proyek
-      dengan pemilik alat berat yang sesuai, efisien, dan profesional.
+      Kami bukan pemilik alat dan bukan perusahaan rental. Posisi kami adalah sebagai
+      koordinator independen yang mengatur dan menghubungkan owner proyek dengan pemilik
+      alat berat yang sesuai dengan kebutuhan lapangan.
+    </p>
+    <p style="margin-top:12px">
+      Dengan posisi independen tersebut, kami dapat bekerja secara objektif, fleksibel,
+      dan profesional dalam memastikan setiap proyek mendapatkan solusi alat berat yang tepat,
+      efisien, dan dapat dipertanggungjawabkan.
     </p>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- 3. LAYANAN -->
 <section id="services">
   <div class="box">
     <h2>Layanan Kami</h2>
     <ul>
-      <li>Koordinasi kebutuhan alat berat proyek</li>
-      <li>Penghubung owner proyek & pemilik alat</li>
-      <li>Negosiasi harga secara profesional</li>
-      <li>Monitoring kesiapan unit</li>
+      <li>Koordinasi kebutuhan alat berat untuk proyek konstruksi, tambang, dan EPC</li>
+      <li>Penghubung profesional antara owner proyek dan pemilik alat</li>
+      <li>Negosiasi harga dan skema kerja secara transparan</li>
+      <li>Verifikasi kesiapan unit, lokasi, dan jadwal mobilisasi</li>
     </ul>
   </div>
 </section>
 
-<!-- UNITS -->
+<!-- 4. UNIT -->
 <section id="units">
   <h2>Unit Alat Berat</h2>
 
@@ -293,12 +287,12 @@ function toggleMenu(){
 
   <details>
     <summary>Crane</summary>
-    <p>Mobile Crane, Crawler Crane</p>
+    <p>Mobile Crane dan Crawler Crane</p>
   </details>
 
   <details>
     <summary>Dump Truck</summary>
-    <p>Roda 6, Roda 10, 20–30 Ton</p>
+    <p>Roda 6, Roda 10, kapasitas 20–30 Ton</p>
   </details>
 
   <details>
@@ -308,37 +302,55 @@ function toggleMenu(){
 
   <details>
     <summary>Compactor</summary>
-    <p>Vibro 10 Ton, Vibro 12 Ton</p>
+    <p>Vibro Roller 10 Ton dan 12 Ton</p>
   </details>
 </section>
 
-<!-- WHY -->
+<!-- 5. WHY -->
 <section id="why">
   <div class="box">
     <h2>Kenapa Memilih Kami</h2>
     <ul>
-      <li>Koordinator profesional & independen</li>
+      <li>Koordinator independen, bukan rental dan bukan pemilik alat</li>
       <li>Jaringan pemilik alat di berbagai kota</li>
-      <li>Proses lebih sederhana & efisien</li>
-      <li>Harga transparan & kompetitif</li>
+      <li>Proses lebih efisien dengan satu pintu komunikasi</li>
+      <li>Pendekatan profesional dan transparan</li>
     </ul>
   </div>
 </section>
 
-<!-- WORKFLOW -->
+<!-- 6. WORKFLOW -->
 <section id="workflow">
   <div class="box">
     <h2>Cara Kerja Kami</h2>
     <ul>
-      <li>Owner menyampaikan kebutuhan proyek</li>
-      <li>Kami mencari & konfirmasi unit</li>
-      <li>Negosiasi dan penawaran terbaik</li>
-      <li>Kesepakatan & mobilisasi</li>
+      <li>Owner proyek menyampaikan kebutuhan alat dan lokasi pekerjaan</li>
+      <li>Kami melakukan pencarian dan konfirmasi unit ke pemilik alat</li>
+      <li>Negosiasi harga, jadwal, dan kesiapan unit</li>
+      <li>Penyampaian penawaran dan kesepakatan</li>
+      <li>Mobilisasi unit sesuai kebutuhan proyek</li>
     </ul>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- 7. BUKTI SOSIAL -->
+<section id="social">
+  <div class="box">
+    <h2>Bukti Sosial</h2>
+    <p>
+      Kami telah terlibat dalam koordinasi penyediaan alat berat untuk berbagai kebutuhan
+      pekerjaan, mulai dari proyek sipil skala kecil hingga proyek konstruksi dan tambang
+      berskala besar di berbagai wilayah.
+    </p>
+    <p style="margin-top:12px">
+      Dengan jaringan pemilik alat di berbagai kota, kami terbiasa menangani perbedaan
+      kebutuhan lokasi, ketersediaan unit, serta skema kerja yang beragam, dengan tetap
+      mengedepankan komunikasi yang profesional dan transparan.
+    </p>
+  </div>
+</section>
+
+<!-- 8. KONTAK -->
 <section id="contact">
   <div class="box">
     <h2>Kontak</h2>
