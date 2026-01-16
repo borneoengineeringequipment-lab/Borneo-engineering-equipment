@@ -6,53 +6,118 @@
 <title>Borneo Engineering Equipment</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{display:flex;background:#f4f6f8;color:#333}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
 
 /* HEADER */
-header{
-  width:280px;background:#0f172a;color:#fff;
-  min-height:100vh;padding:30px 20px;position:fixed
-}
-header h1{text-align:center;font-size:20px;margin-bottom:30px;line-height:1.4}
-nav ul{list-style:none}
-nav ul li{margin-bottom:12px}
-nav ul li a{
-  display:block;padding:12px 15px;text-decoration:none;
-  color:#fff;background:#1e293b;border-radius:6px;font-size:14px
-}
-nav ul li a:hover{background:#2563eb}
-
-/* MAIN */
-main{margin-left:280px;padding:40px;width:100%}
-section{
-  background:#fff;padding:40px;border-radius:12px;
-  margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,.06)
-}
-section h2{margin-bottom:20px;color:#0f172a}
-section p,section li{line-height:1.8;margin-bottom:10px}
-
-/* UNIT ACCORDION */
-.unit-item{margin-bottom:12px;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
-.unit-title{
-  width:100%;text-align:left;padding:15px 18px;
-  background:#1e293b;color:#fff;border:none;
-  font-size:15px;font-weight:bold;cursor:pointer
-}
-.unit-title:hover{background:#2563eb}
-.unit-content{display:none;padding:18px;background:#f9fafb;line-height:1.8}
-
-/* WA FLOAT */
-.wa-float{
-  position:fixed;bottom:25px;right:25px;
-  background:#25D366;color:#fff;padding:14px 18px;
-  border-radius:50px;font-weight:bold;text-decoration:none
+header {
+  background: #111;
+  color: #fff;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-  header{position:relative;width:100%;min-height:auto}
-  main{margin-left:0}
+.header-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* HAMBURGER */
+.hamburger {
+  font-size: 26px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+}
+
+/* MENU */
+nav {
+  display: none;
+  background: #000;
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+nav a {
+  display: block;
+  color: #fff;
+  padding: 15px;
+  border-bottom: 1px solid #333;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: #222;
+}
+
+/* SECTION */
+section {
+  padding: 80px 15px 30px;
+}
+
+.box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* UNIT */
+.unit-title {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  background: #eee;
+  margin-top: 10px;
+}
+
+.unit-content {
+  display: none;
+  padding: 10px;
+}
+
+.unit-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.unit-list li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 6px;
+}
+
+.unit-list li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+}
+
+/* FLOATING WA */
+.wa-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
 }
 </style>
 </head>
@@ -60,157 +125,162 @@ section p,section li{line-height:1.8;margin-bottom:10px}
 <body>
 
 <header>
-<h1>Borneo<br>Engineering Equipment</h1>
-<nav>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#tentang">Tentang Kami</a></li>
-<li><a href="#ruanglingkup">Ruang Lingkup</a></li>
-<li><a href="#unit">Unit</a></li>
-<li><a href="#kenapa">Kenapa Kami</a></li>
-<li><a href="#alur">Alur Kerja</a></li>
-<li><a href="#bukti">Bukti Sosial</a></li>
-<li><a href="#kontak">Kontak</a></li>
-</ul>
-</nav>
+  <div class="header-title">Borneo Engineering Equipment</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
 </header>
 
-<main>
+<nav id="menu">
+  <a href="#home">Home</a>
+  <a href="#about">Tentang Kami</a>
+  <a href="#scope">Ruang Lingkup</a>
+  <a href="#unit">Unit</a>
+  <a href="#why">Kenapa Kami</a>
+  <a href="#workflow">Alur Kerja</a>
+  <a href="#social">Bukti Sosial</a>
+  <a href="#contact">Kontak</a>
+</nav>
 
 <section id="home">
-<h2>Home</h2>
-<p>
-Borneo Engineering Equipment berperan sebagai koordinator independen
-dalam pengadaan alat berat, menjembatani kebutuhan owner proyek dengan
-pemilik unit di berbagai wilayah secara profesional, terstruktur,
-dan transparan.
-</p>
+  <div class="box">
+    <p>
+      Borneo Engineering Equipment berperan sebagai koordinator independen dalam pengadaan
+      alat berat, menjembatani kebutuhan owner proyek dengan pemilik unit di berbagai wilayah
+      secara profesional, terstruktur, dan transparan.
+    </p>
+  </div>
 </section>
 
-<section id="tentang">
-<h2>Tentang Kami</h2>
-<p>Kami bukan perusahaan rental dan tidak memiliki unit alat berat secara langsung.</p>
-<p>Fokus kami adalah mengatur, mengoordinasikan, serta memastikan ketersediaan alat berat sesuai kebutuhan teknis dan jadwal proyek.</p>
+<section id="about">
+  <div class="box">
+    <p>
+      Kami bukan perusahaan rental dan tidak memiliki unit secara langsung.
+      Fokus kami adalah mengatur, mengoordinasikan, dan memastikan ketersediaan
+      alat berat yang sesuai dengan kebutuhan teknis dan jadwal proyek.
+    </p>
+  </div>
 </section>
 
-<section id="ruanglingkup">
-<h2>Ruang Lingkup Layanan</h2>
-<ul>
-<li>Koordinasi kebutuhan alat berat proyek</li>
-<li>Pengadaan unit melalui jaringan pemilik alat</li>
-<li>Negosiasi teknis & komersial</li>
-<li>Sinkronisasi jadwal mobilisasi</li>
-</ul>
+<section id="scope">
+  <div class="box">
+    <h2>Ruang Lingkup Layanan</h2>
+    <ul>
+      <li>Koordinasi kebutuhan alat berat proyek</li>
+      <li>Pengadaan unit melalui jaringan pemilik alat</li>
+      <li>Negosiasi teknis & komersial</li>
+      <li>Sinkronisasi jadwal mobilisasi</li>
+    </ul>
+  </div>
 </section>
 
 <section id="unit">
-<h2>Unit</h2>
-<p>Klik jenis unit untuk melihat detail kelas dan kapasitas.</p>
+  <div class="box">
+    <h2>Unit</h2>
 
-<div class="unit-item">
-<button class="unit-title">Excavator</button>
-<div class="unit-content">
-Mini Excavator (1–6 Ton)<br>
-PC50 – PC70<br>
-PC100 – PC138<br>
-PC200 – PC300<br>
-PC350 – PC500<br>
-PC700 – PC1250 (Mining Class)
-</div>
-</div>
+    <div class="unit-title" onclick="toggleUnit(this)">Excavator</div>
+    <div class="unit-content">
+      <ul class="unit-list">
+        <li>PC50 – PC70</li>
+        <li>PC100 – PC138</li>
+        <li>PC200 – PC300</li>
+        <li>PC350 – PC500</li>
+        <li>PC700 – PC1250</li>
+      </ul>
+    </div>
 
-<div class="unit-item">
-<button class="unit-title">Bulldozer</button>
-<div class="unit-content">
-D3 – D5<br>D6 – D7<br>D8 – D10<br>D11 (Tambang)
-</div>
-</div>
+    <div class="unit-title" onclick="toggleUnit(this)">Bulldozer</div>
+    <div class="unit-content">
+      <ul class="unit-list">
+        <li>D3 – D5</li>
+        <li>D6 – D7</li>
+        <li>D8 – D10</li>
+        <li>D11</li>
+      </ul>
+    </div>
 
-<div class="unit-item">
-<button class="unit-title">Dump Truck</button>
-<div class="unit-content">
-6 Roda (8–10 Ton)<br>
-10–12 Roda (20–30 Ton)<br>
-Dump Truck Tambang<br>
-Off Highway Truck (40–100+ Ton)
-</div>
-</div>
+    <div class="unit-title" onclick="toggleUnit(this)">Dump Truck</div>
+    <div class="unit-content">
+      <ul class="unit-list">
+        <li>6 Roda</li>
+        <li>10–12 Roda</li>
+        <li>Dump Truck Tambang</li>
+        <li>Off Highway Truck</li>
+      </ul>
+    </div>
 
-<div class="unit-item">
-<button class="unit-title">Wheel Loader</button>
-<div class="unit-content">
-1–2 m³<br>3–4 m³<br>5–6 m³<br>7–10 m³ (Mining)
-</div>
-</div>
+    <div class="unit-title" onclick="toggleUnit(this)">Wheel Loader</div>
+    <div class="unit-content">
+      <ul class="unit-list">
+        <li>1–2 m³</li>
+        <li>3–4 m³</li>
+        <li>5–6 m³</li>
+        <li>7–10 m³</li>
+      </ul>
+    </div>
 
-<div class="unit-item">
-<button class="unit-title">Motor Grader</button>
-<div class="unit-content">
-Motor Grader Proyek Jalan<br>
-Motor Grader Tambang<br>
-Heavy Duty Grader
-</div>
-</div>
+    <div class="unit-title" onclick="toggleUnit(this)">Support Unit</div>
+    <div class="unit-content">
+      <ul class="unit-list">
+        <li>Water Truck</li>
+        <li>Fuel Truck</li>
+        <li>Lowbed Trailer</li>
+        <li>Prime Mover</li>
+      </ul>
+    </div>
 
-<div class="unit-item">
-<button class="unit-title">Compactor / Roller</button>
-<div class="unit-content">
-Baby Roller<br>Single Drum<br>Double Drum<br>Pneumatic Tire Roller
-</div>
-</div>
-
-<div class="unit-item">
-<button class="unit-title">Crane</button>
-<div class="unit-content">
-Mobile Crane<br>Truck Crane<br>Rough Terrain<br>Crawler Crane
-</div>
-</div>
-
-<div class="unit-item">
-<button class="unit-title">Support Unit</button>
-<div class="unit-content">
-Water Truck<br>Fuel Truck<br>Lowbed Trailer<br>Prime Mover<br>Service Truck
-</div>
-</div>
-
+  </div>
 </section>
 
-<section id="alur">
-<h2>Alur Kerja Kami</h2>
-<ul>
-<li>Owner menyampaikan kebutuhan alat & lokasi proyek</li>
-<li>Kami melakukan pencarian unit melalui jaringan pemilik alat</li>
-<li>Negosiasi teknis dan harga</li>
-<li>Penyampaian penawaran ke owner</li>
-<li>Koordinasi hingga unit siap mobilisasi</li>
-</ul>
+<section id="why">
+  <div class="box">
+    <h2>Kenapa Kami</h2>
+    <p>Netral, transparan, dan berbasis jaringan unit terpercaya.</p>
+  </div>
 </section>
 
-<section id="bukti">
-<h2>Rekam Jejak & Kepercayaan</h2>
-<ul>
-<li>Terlibat dalam pengadaan alat proyek konstruksi & tambang</li>
-<li>Dipercaya oleh owner proyek skala kecil hingga menengah</li>
-<li>Kerja sama dengan pemilik unit di berbagai kota</li>
-</ul>
+<section id="workflow">
+  <div class="box">
+    <h2>Alur Kerja Kami</h2>
+    <ul>
+      <li>Owner menyampaikan kebutuhan alat & lokasi proyek</li>
+      <li>Kami melakukan pencarian unit melalui jaringan pemilik alat</li>
+      <li>Negosiasi teknis dan harga</li>
+      <li>Penyampaian penawaran ke owner</li>
+      <li>Koordinasi hingga unit siap mobilisasi</li>
+    </ul>
+  </div>
 </section>
 
-<section id="kontak">
-<h2>Kontak</h2>
-<p>📞 WhatsApp: 0821 9072 4298</p>
-<p>📧 Email: borneoengineeringequipment@gmail.com</p>
+<section id="social">
+  <div class="box">
+    <h2>Rekam Jejak & Kepercayaan</h2>
+    <ul>
+      <li>Terlibat dalam pengadaan alat proyek konstruksi & tambang</li>
+      <li>Dipercaya oleh owner proyek skala kecil hingga menengah</li>
+      <li>Kerja sama dengan pemilik unit di berbagai kota</li>
+    </ul>
+  </div>
 </section>
 
-</main>
+<section id="contact">
+  <div class="box">
+    <h2>Kontak</h2>
+    <p>📞 WhatsApp: 0821 9072 4298</p>
+    <p>📧 Email: borneoengineeringequipment@gmail.com</p>
+  </div>
+</section>
 
-<a class="wa-float" href="https://wa.me/6282190724298" target="_blank">WhatsApp Kami</a>
+<a class="wa-float" href="https://wa.me/6282190724298" target="_blank">WhatsApp</a>
 
 <script>
-document.querySelectorAll(".unit-title").forEach(t=>{
-t.onclick=()=>{const c=t.nextElementSibling;
-document.querySelectorAll(".unit-content").forEach(x=>x.style.display="none");
-c.style.display=c.style.display==="block"?"none":"block";}
-});
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+function toggleUnit(el) {
+  const content = el.nextElementSibling;
+  content.style.display = content.style.display === "block" ? "none" : "block";
+}
 </script>
 
 </body>
