@@ -1,65 +1,250 @@
-:root{
-  --primary:#0f2027;
-  --secondary:#203a43;
-  --accent:#2c5364;
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Borneo Engineering Equipment</title>
 
-  --bg-main:#f2f4f7;
-  --bg-card:#ffffff;
-
-  --text-main:#1f2933;
-  --text-soft:#4b5563;
-
-  --border-soft:#e5e7eb;
-}
-
-/* GLOBAL */
+<style>
 body{
-  background:var(--bg-main);
-  color:var(--text-main);
+  margin:0;
+  font-family:"Segoe UI",Roboto,Arial,sans-serif;
+  background:#f2f4f7;
+  color:#1f2933;
 }
 
-/* HERO / HEADER AREA */
-.hero,
-header{
-  background:linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary),
-    var(--accent)
-  );
-  color:#ffffff;
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  padding:40px 18px 46px;
 }
 
-/* CARD / BOX */
-.card,
-.box{
-  background:var(--bg-card);
-  border:1px solid var(--border-soft);
+.hero h1{
+  margin:0 0 12px;
+  font-size:22px;
+  font-weight:600;
+}
+
+.hero p{
+  margin:0;
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* SECTION */
+section{
+  padding:22px 16px;
+}
+
+.card{
+  background:#fff;
+  padding:22px;
+  border-radius:16px;
   box-shadow:0 8px 24px rgba(0,0,0,.08);
 }
 
-/* TITLE */
-h1,h2,h3{
-  color:var(--text-main);
-}
-
 h2{
-  border-left:4px solid var(--accent);
+  margin:0 0 14px;
+  font-size:18px;
+  border-left:4px solid #2c5364;
+  padding-left:10px;
 }
 
-/* TEXT */
-p,li{
-  color:var(--text-soft);
+/* LIST */
+ul{
+  margin:0;
+  padding-left:18px;
+}
+
+ul li{
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+/* UNIT */
+.unit-group{
+  margin-bottom:18px;
+}
+
+.unit-title{
+  font-weight:600;
+  cursor:pointer;
+  padding:8px 0;
+}
+
+.unit-list{
+  display:none;
+  padding-left:14px;
+}
+
+.unit-list li{
+  list-style:none;
+  margin-bottom:6px;
+  font-size:14px;
+  color:#374151;
 }
 
 /* FOOTER */
 footer{
   background:#0b0f14;
   color:#d1d5db;
+  text-align:center;
+  padding:22px 10px;
+  font-size:13px;
 }
 
-/* WHATSAPP FLOAT */
+/* WA FLOAT */
 .wa-float{
+  position:fixed;
+  bottom:22px;
+  right:22px;
   background:#25D366;
-  color:#ffffff;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
 }
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <h1>Borneo Engineering Equipment</h1>
+  <p>
+    Koordinator independen dalam pengadaan alat berat, menjembatani kebutuhan
+    owner proyek dengan pemilik unit di berbagai wilayah secara profesional,
+    terstruktur, dan transparan.
+  </p>
+</div>
+
+<section>
+  <div class="card">
+    <h2>Tentang Kami</h2>
+    <p>
+      Kami bukan perusahaan rental dan tidak memiliki unit secara langsung.
+      Fokus kami adalah mengatur, mengoordinasikan, dan memastikan ketersediaan
+      alat berat sesuai kebutuhan teknis dan jadwal proyek.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Ruang Lingkup Layanan</h2>
+    <ul>
+      <li>Koordinasi kebutuhan alat berat proyek</li>
+      <li>Pengadaan unit melalui jaringan pemilik alat</li>
+      <li>Negosiasi teknis & komersial</li>
+      <li>Sinkronisasi jadwal mobilisasi</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Unit Alat Berat</h2>
+
+    <div class="unit-group">
+      <div class="unit-title" onclick="toggleUnit(this)">Excavator</div>
+      <ul class="unit-list">
+        <li>- PC30</li><li>- PC50</li><li>- PC75</li><li>- PC100</li>
+        <li>- PC200</li><li>- PC300</li><li>- PC400</li><li>- PC600</li><li>- PC800</li>
+      </ul>
+    </div>
+
+    <div class="unit-group">
+      <div class="unit-title" onclick="toggleUnit(this)">Bulldozer</div>
+      <ul class="unit-list">
+        <li>- D3</li><li>- D5</li><li>- D6</li><li>- D8</li><li>- D10</li><li>- D11</li>
+      </ul>
+    </div>
+
+    <div class="unit-group">
+      <div class="unit-title" onclick="toggleUnit(this)">Wheel Loader</div>
+      <ul class="unit-list">
+        <li>- 1.5 m³</li><li>- 2.5 m³</li><li>- 3.0 m³</li><li>- 4.5 m³</li><li>- 5.5 m³</li>
+      </ul>
+    </div>
+
+    <div class="unit-group">
+      <div class="unit-title" onclick="toggleUnit(this)">Dump Truck</div>
+      <ul class="unit-list">
+        <li>- 10 Ton</li><li>- 20 Ton</li><li>- 30 Ton</li><li>- 40 Ton</li><li>- 50 Ton</li>
+      </ul>
+    </div>
+
+    <div class="unit-group">
+      <div class="unit-title" onclick="toggleUnit(this)">Crane</div>
+      <ul class="unit-list">
+        <li>- 25 Ton</li><li>- 50 Ton</li><li>- 100 Ton</li><li>- Crawler Crane</li>
+      </ul>
+    </div>
+
+    <div class="unit-group">
+      <div class="unit-title" onclick="toggleUnit(this)">Motor Grader</div>
+      <ul class="unit-list">
+        <li>- 12 Feet</li><li>- 14 Feet</li>
+      </ul>
+    </div>
+
+    <div class="unit-group">
+      <div class="unit-title" onclick="toggleUnit(this)">Compactor</div>
+      <ul class="unit-list">
+        <li>- Single Drum</li><li>- Double Drum</li><li>- Pneumatic Roller</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Alur Kerja Kami</h2>
+    <ul>
+      <li>Owner menyampaikan kebutuhan alat & lokasi proyek</li>
+      <li>Pencarian unit melalui jaringan pemilik alat</li>
+      <li>Negosiasi teknis dan harga</li>
+      <li>Penyampaian penawaran ke owner</li>
+      <li>Koordinasi hingga unit siap mobilisasi</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Kenapa Kami</h2>
+    <p>
+      Kami berperan independen sebagai penghubung owner proyek dan pemilik unit,
+      memastikan alat yang tepat, siap kerja, dan terkoordinasi secara efisien.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Kontak</h2>
+    <p>📞 WhatsApp: 0821 9072 4298</p>
+    <p>📧 Email: borneoengineeringequipment@gmail.com</p>
+  </div>
+</section>
+
+<footer>
+© 2026 Borneo Engineering Equipment<br>
+Koordinator & Pengadaan Alat Berat Independen
+</footer>
+
+<a class="wa-float" href="https://wa.me/6282190724298">WhatsApp</a>
+
+<script>
+function toggleUnit(el){
+  const list = el.nextElementSibling;
+  list.style.display = list.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
