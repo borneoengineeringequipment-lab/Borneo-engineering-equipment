@@ -3,305 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PT Borneo Engineering Equipment | Rental Alat Berat</title>
+<title>Borneo Engineering Equipment</title>
 
 <style>
-*{box-sizing:border-box}
-body{
-    margin:0;
-    font-family:"Segoe UI",Arial,sans-serif;
-    background:#f4f6f8;
-    color:#333;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{display:flex;background:#f4f6f8;color:#333}
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:#0b3c5d;
-    padding:15px 40px;
+  width:280px;background:#0f172a;color:#fff;
+  min-height:100vh;padding:30px 20px;position:fixed
 }
-.header-container{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+header h1{text-align:center;font-size:20px;margin-bottom:30px;line-height:1.4}
+nav ul{list-style:none}
+nav ul li{margin-bottom:12px}
+nav ul li a{
+  display:block;padding:12px 15px;text-decoration:none;
+  color:#fff;background:#1e293b;border-radius:6px;font-size:14px
 }
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
+nav ul li a:hover{background:#2563eb}
+
+/* MAIN */
+main{margin-left:280px;padding:40px;width:100%}
+section{
+  background:#fff;padding:40px;border-radius:12px;
+  margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,.06)
 }
-.logo img{width:48px}
-.logo-text h1{
-    font-size:20px;
-    margin:0;
-    color:#fff;
+section h2{margin-bottom:20px;color:#0f172a}
+section p,section li{line-height:1.8;margin-bottom:10px}
+
+/* UNIT ACCORDION */
+.unit-item{margin-bottom:12px;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+.unit-title{
+  width:100%;text-align:left;padding:15px 18px;
+  background:#1e293b;color:#fff;border:none;
+  font-size:15px;font-weight:bold;cursor:pointer
 }
-.logo-text span{
-    font-size:12px;
-    color:#cfdce6;
-}
-nav{
-    display:flex;
-    align-items:center;
-    gap:25px;
-}
-nav a{
-    color:#fff;
-    text-decoration:none;
-    font-size:15px;
-}
-nav a:hover{color:#ffcc00}
-.btn-wa{
-    background:#25D366;
-    padding:10px 16px;
-    border-radius:6px;
-    color:#fff;
-    font-weight:bold;
-    text-decoration:none;
+.unit-title:hover{background:#2563eb}
+.unit-content{display:none;padding:18px;background:#f9fafb;line-height:1.8}
+
+/* WA FLOAT */
+.wa-float{
+  position:fixed;bottom:25px;right:25px;
+  background:#25D366;color:#fff;padding:14px 18px;
+  border-radius:50px;font-weight:bold;text-decoration:none
 }
 
-/* ===== HERO ===== */
-.hero{
-    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url('https://images.unsplash.com/photo-1603816245457-fe9c80b740ff') center/cover;
-    color:white;
-    padding:110px 20px;
-    text-align:center;
-}
-.hero h2{font-size:40px;margin-bottom:10px}
-.hero p{font-size:18px}
-
-/* ===== UNIT COVER ===== */
-#unit-cover{
-    display:none;
-    cursor:pointer;
-}
-#unit-cover div{
-    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-    url('https://images.unsplash.com/photo-1603816245457-fe9c80b740ff') center/cover;
-    padding:120px 20px;
-    text-align:center;
-    color:white;
-}
-#unit-cover h2{
-    font-size:42px;
-    letter-spacing:2px;
-    margin:0;
-}
-#unit-cover p{
-    margin-top:15px;
-    font-size:18px;
-    opacity:.9;
-}
-
-/* ===== CONTENT ===== */
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:50px 20px;
-}
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
-}
-.alat{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-.card{
-    background:white;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-.card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-.card-body{padding:20px}
-.card-body h3{margin-top:0}
-.card-body p{font-size:14px}
-.btn{
-    display:inline-block;
-    margin-top:10px;
-    padding:10px 18px;
-    background:#0b3c5d;
-    color:white;
-    text-decoration:none;
-    border-radius:6px;
-}
-.btn:hover{background:#06283d}
-
-/* ===== CONTACT ===== */
-.contact{
-    background:#0b3c5d;
-    color:white;
-    padding:50px 20px;
-    text-align:center;
-}
-.contact a{
-    color:#25D366;
-    font-weight:bold;
-    text-decoration:none;
-}
-
-/* ===== FOOTER ===== */
-footer{
-    background:#06283d;
-    color:#cfdce6;
-    text-align:center;
-    padding:15px;
-    font-size:14px;
+/* RESPONSIVE */
+@media(max-width:768px){
+  header{position:relative;width:100%;min-height:auto}
+  main{margin-left:0}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-<div class="header-container">
-    <div class="logo">
-        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995539.png">
-        <div class="logo-text">
-            <h1>PT Borneo Engineering Equipment</h1>
-            <span>Rental Alat Berat & Support Tambang</span>
-        </div>
-    </div>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#" onclick="openUnitCover()">Unit</a>
-        <a href="#kontak">Kontak</a>
-        <a class="btn-wa" href="https://wa.me/6282190724298" target="_blank">WhatsApp</a>
-    </nav>
-</div>
+<h1>Borneo<br>Engineering Equipment</h1>
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#tentang">Tentang Kami</a></li>
+<li><a href="#ruanglingkup">Ruang Lingkup</a></li>
+<li><a href="#unit">Unit</a></li>
+<li><a href="#kenapa">Kenapa Kami</a></li>
+<li><a href="#alur">Alur Kerja</a></li>
+<li><a href="#bukti">Bukti Sosial</a></li>
+<li><a href="#kontak">Kontak</a></li>
+</ul>
+</nav>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="home">
-<h2>Rental Alat Berat Profesional & Terpercaya</h2>
-<p>Solusi alat berat untuk tambang & konstruksi</p>
-</section>
+<main>
 
-<!-- UNIT COVER -->
-<section id="unit-cover" onclick="showAllUnits()">
-    <div>
-        <h2>HEAVY EQUIPMENT</h2>
-        <p>Klik untuk melihat semua unit</p>
-    </div>
-</section>
-
-<!-- UNIT LENGKAP -->
-<section class="container" id="alat" style="display:none;">
-<h2 class="section-title">Unit Alat Berat Kami</h2>
-
-<div class="alat">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1590650153855-d9e808231d41">
-<div class="card-body">
-<h3>Excavator PC200</h3>
-<p>Tambang & konstruksi berat.</p>
-<a class="btn" href="https://wa.me/6282190724298">Sewa</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1604023489395-4c6d3c0f1a2b">
-<div class="card-body">
-<h3>Excavator PC125</h3>
-<p>Pekerjaan menengah.</p>
-<a class="btn" href="https://wa.me/6282190724298">Sewa</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1616019471618-8ccdc2a4c6b1">
-<div class="card-body">
-<h3>Excavator PC75</h3>
-<p>Area sempit & ringan.</p>
-<a class="btn" href="https://wa.me/6282190724298">Sewa</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76">
-<div class="card-body">
-<h3>Dump Truck 26 Ton</h3>
-<p>Hauling material.</p>
-<a class="btn" href="https://wa.me/6282190724298">Sewa</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1605201100100-3cbb44fd5d50">
-<div class="card-body">
-<h3>Bulldozer D65</h3>
-<p>Land clearing & cut fill.</p>
-<a class="btn" href="https://wa.me/6282190724298">Sewa</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1617196038435-4b83cd8b67f3">
-<div class="card-body">
-<h3>Motor Grader</h3>
-<p>Perataan jalan hauling.</p>
-<a class="btn" href="https://wa.me/6282190724298">Sewa</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1617957743094-05db07c3b18b">
-<div class="card-body">
-<h3>Vibro Roller</h3>
-<p>Pemadatan tanah.</p>
-<a class="btn" href="https://wa.me/6282190724298">Sewa</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1620916566390-8d65d4b8c02f">
-<div class="card-body">
-<h3>Wheel Loader</h3>
-<p>Loading material.</p>
-<a class="btn" href="https://wa.me/6282190724298">Sewa</a>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="kontak">
-<h2>Kontak Kami</h2>
-<p>📍 Melayani seluruh Indonesia</p>
-<p>📞 WhatsApp:
-<a href="https://wa.me/6282190724298" target="_blank">0821-9072-4298</a>
+<section id="home">
+<h2>Home</h2>
+<p>
+Borneo Engineering Equipment berperan sebagai koordinator independen
+dalam pengadaan alat berat, menjembatani kebutuhan owner proyek dengan
+pemilik unit di berbagai wilayah secara profesional, terstruktur,
+dan transparan.
 </p>
 </section>
 
-<footer>
-© 2026 PT Borneo Engineering Equipment | Rental Alat Berat
-</footer>
+<section id="tentang">
+<h2>Tentang Kami</h2>
+<p>Kami bukan perusahaan rental dan tidak memiliki unit alat berat secara langsung.</p>
+<p>Fokus kami adalah mengatur, mengoordinasikan, serta memastikan ketersediaan alat berat sesuai kebutuhan teknis dan jadwal proyek.</p>
+</section>
 
-<!-- JS -->
+<section id="ruanglingkup">
+<h2>Ruang Lingkup Layanan</h2>
+<ul>
+<li>Koordinasi kebutuhan alat berat proyek</li>
+<li>Pengadaan unit melalui jaringan pemilik alat</li>
+<li>Negosiasi teknis & komersial</li>
+<li>Sinkronisasi jadwal mobilisasi</li>
+</ul>
+</section>
+
+<section id="unit">
+<h2>Unit</h2>
+<p>Klik jenis unit untuk melihat detail kelas dan kapasitas.</p>
+
+<div class="unit-item">
+<button class="unit-title">Excavator</button>
+<div class="unit-content">
+Mini Excavator (1–6 Ton)<br>
+PC50 – PC70<br>
+PC100 – PC138<br>
+PC200 – PC300<br>
+PC350 – PC500<br>
+PC700 – PC1250 (Mining Class)
+</div>
+</div>
+
+<div class="unit-item">
+<button class="unit-title">Bulldozer</button>
+<div class="unit-content">
+D3 – D5<br>D6 – D7<br>D8 – D10<br>D11 (Tambang)
+</div>
+</div>
+
+<div class="unit-item">
+<button class="unit-title">Dump Truck</button>
+<div class="unit-content">
+6 Roda (8–10 Ton)<br>
+10–12 Roda (20–30 Ton)<br>
+Dump Truck Tambang<br>
+Off Highway Truck (40–100+ Ton)
+</div>
+</div>
+
+<div class="unit-item">
+<button class="unit-title">Wheel Loader</button>
+<div class="unit-content">
+1–2 m³<br>3–4 m³<br>5–6 m³<br>7–10 m³ (Mining)
+</div>
+</div>
+
+<div class="unit-item">
+<button class="unit-title">Motor Grader</button>
+<div class="unit-content">
+Motor Grader Proyek Jalan<br>
+Motor Grader Tambang<br>
+Heavy Duty Grader
+</div>
+</div>
+
+<div class="unit-item">
+<button class="unit-title">Compactor / Roller</button>
+<div class="unit-content">
+Baby Roller<br>Single Drum<br>Double Drum<br>Pneumatic Tire Roller
+</div>
+</div>
+
+<div class="unit-item">
+<button class="unit-title">Crane</button>
+<div class="unit-content">
+Mobile Crane<br>Truck Crane<br>Rough Terrain<br>Crawler Crane
+</div>
+</div>
+
+<div class="unit-item">
+<button class="unit-title">Support Unit</button>
+<div class="unit-content">
+Water Truck<br>Fuel Truck<br>Lowbed Trailer<br>Prime Mover<br>Service Truck
+</div>
+</div>
+
+</section>
+
+<section id="alur">
+<h2>Alur Kerja Kami</h2>
+<ul>
+<li>Owner menyampaikan kebutuhan alat & lokasi proyek</li>
+<li>Kami melakukan pencarian unit melalui jaringan pemilik alat</li>
+<li>Negosiasi teknis dan harga</li>
+<li>Penyampaian penawaran ke owner</li>
+<li>Koordinasi hingga unit siap mobilisasi</li>
+</ul>
+</section>
+
+<section id="bukti">
+<h2>Rekam Jejak & Kepercayaan</h2>
+<ul>
+<li>Terlibat dalam pengadaan alat proyek konstruksi & tambang</li>
+<li>Dipercaya oleh owner proyek skala kecil hingga menengah</li>
+<li>Kerja sama dengan pemilik unit di berbagai kota</li>
+</ul>
+</section>
+
+<section id="kontak">
+<h2>Kontak</h2>
+<p>📞 WhatsApp: 0821 9072 4298</p>
+<p>📧 Email: borneoengineeringequipment@gmail.com</p>
+</section>
+
+</main>
+
+<a class="wa-float" href="https://wa.me/6282190724298" target="_blank">WhatsApp Kami</a>
+
 <script>
-function openUnitCover(){
-    document.getElementById("unit-cover").style.display="block";
-    document.getElementById("alat").style.display="none";
-    document.getElementById("unit-cover").scrollIntoView({behavior:"smooth"});
-}
-function showAllUnits(){
-    document.getElementById("alat").style.display="block";
-    document.getElementById("alat").scrollIntoView({behavior:"smooth"});
-}
+document.querySelectorAll(".unit-title").forEach(t=>{
+t.onclick=()=>{const c=t.nextElementSibling;
+document.querySelectorAll(".unit-content").forEach(x=>x.style.display="none");
+c.style.display=c.style.display==="block"?"none":"block";}
+});
 </script>
 
 </body>
