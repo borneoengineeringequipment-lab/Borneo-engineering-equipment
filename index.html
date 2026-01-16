@@ -11,7 +11,6 @@ body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   background: #f1f3f6;
   color: #222;
-  line-height: 1.6;
 }
 
 /* HEADER */
@@ -27,17 +26,26 @@ header {
 }
 
 .header-title {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
 }
 
+/* HAMBURGER */
 .hamburger {
-  font-size: 32px;
-  cursor: pointer;
+  width: 34px;
+  height: 24px;
   position: absolute;
   right: 24px;
-  top: 14px;
-  padding: 6px 8px;
+  top: 18px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  margin-bottom: 6px;
 }
 
 /* MENU */
@@ -54,13 +62,15 @@ nav {
 nav a {
   display: block;
   color: #fff;
-  padding: 16px 20px;
+  padding: 12px 20px;
   border-bottom: 1px solid #1f2933;
   text-decoration: none;
+  font-size: 15px;
 }
 
+/* SECTION */
 section {
-  padding: 90px 16px 30px;
+  padding: 90px 16px 28px;
 }
 
 .box {
@@ -90,7 +100,7 @@ h2 {
 
 .unit-content {
   display: none;
-  padding: 12px;
+  padding: 12px 10px;
 }
 
 .unit-list {
@@ -122,6 +132,15 @@ h2 {
   text-decoration: none;
   font-weight: 600;
 }
+
+/* FOOTER */
+footer {
+  background: #0b0f14;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+}
 </style>
 </head>
 
@@ -129,7 +148,9 @@ h2 {
 
 <header>
   <div class="header-title">Borneo Engineering Equipment</div>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </header>
 
 <nav id="menu">
@@ -145,21 +166,13 @@ h2 {
 
 <section id="home">
   <div class="box">
-    <p>
-      Borneo Engineering Equipment berperan sebagai koordinator independen dalam pengadaan
-      alat berat, menjembatani kebutuhan owner proyek dengan pemilik unit di berbagai wilayah
-      secara profesional, terstruktur, dan transparan.
-    </p>
+    Borneo Engineering Equipment berperan sebagai koordinator independen dalam pengadaan alat berat, menjembatani kebutuhan owner proyek dengan pemilik unit di berbagai wilayah secara profesional, terstruktur, dan transparan.
   </div>
 </section>
 
 <section id="about">
   <div class="box">
-    <p>
-      Kami bukan perusahaan rental dan tidak memiliki unit secara langsung.
-      Fokus kami adalah mengatur, mengoordinasikan, dan memastikan ketersediaan
-      alat berat sesuai kebutuhan teknis dan jadwal proyek.
-    </p>
+    Kami bukan perusahaan rental dan tidak memiliki unit secara langsung. Fokus kami adalah mengatur, mengoordinasikan, dan memastikan ketersediaan alat berat yang sesuai dengan kebutuhan teknis dan jadwal proyek.
   </div>
 </section>
 
@@ -179,97 +192,99 @@ h2 {
   <div class="box">
     <h2>Unit</h2>
 
+    <!-- EXCAVATOR -->
     <div class="unit-title" onclick="toggleUnit(this)">Excavator</div>
     <div class="unit-content">
       <ul class="unit-list">
-        <li>PC50 – PC70</li>
-        <li>PC100 – PC138</li>
-        <li>PC200 – PC300</li>
-        <li>PC350 – PC500</li>
-        <li>PC700 – PC1250</li>
+        <li>PC30</li>
+        <li>PC50</li>
+        <li>PC75</li>
+        <li>PC100</li>
+        <li>PC200</li>
+        <li>PC300</li>
+        <li>PC400</li>
+        <li>PC600</li>
+        <li>PC800</li>
+        <li>Mining Class Excavator</li>
       </ul>
     </div>
 
+    <!-- DOZER -->
     <div class="unit-title" onclick="toggleUnit(this)">Bulldozer</div>
     <div class="unit-content">
       <ul class="unit-list">
-        <li>D3 – D5</li>
-        <li>D6 – D7</li>
-        <li>D8 – D10</li>
+        <li>D3</li>
+        <li>D5</li>
+        <li>D6</li>
+        <li>D8</li>
+        <li>D10</li>
         <li>D11</li>
       </ul>
     </div>
 
-    <div class="unit-title" onclick="toggleUnit(this)">Dump Truck</div>
-    <div class="unit-content">
-      <ul class="unit-list">
-        <li>6 Roda</li>
-        <li>10–12 Roda</li>
-        <li>Dump Truck Tambang</li>
-        <li>Off Highway Truck</li>
-      </ul>
-    </div>
-
+    <!-- LOADER -->
     <div class="unit-title" onclick="toggleUnit(this)">Wheel Loader</div>
     <div class="unit-content">
       <ul class="unit-list">
-        <li>1–2 m³</li>
-        <li>3–4 m³</li>
-        <li>5–6 m³</li>
-        <li>7–10 m³</li>
+        <li>1.5 m³</li>
+        <li>2.5 m³</li>
+        <li>3.0 m³</li>
+        <li>4.5 m³</li>
+        <li>5.5 m³</li>
+        <li>Mining Loader</li>
       </ul>
     </div>
 
-    <div class="unit-title" onclick="toggleUnit(this)">Motor Grader</div>
+    <!-- DUMP TRUCK -->
+    <div class="unit-title" onclick="toggleUnit(this)">Dump Truck</div>
     <div class="unit-content">
       <ul class="unit-list">
-        <li>Motor Grader Proyek Jalan</li>
-        <li>Motor Grader Tambang</li>
-        <li>Heavy Duty Grader</li>
+        <li>10 Ton</li>
+        <li>20 Ton</li>
+        <li>30 Ton</li>
+        <li>40 Ton</li>
+        <li>50 Ton</li>
+        <li>Mining Dump Truck</li>
       </ul>
     </div>
 
-    <div class="unit-title" onclick="toggleUnit(this)">Compactor / Roller</div>
-    <div class="unit-content">
-      <ul class="unit-list">
-        <li>Baby Roller</li>
-        <li>Single Drum Roller</li>
-        <li>Double Drum Roller</li>
-        <li>Pneumatic Tire Roller</li>
-      </ul>
-    </div>
-
+    <!-- CRANE -->
     <div class="unit-title" onclick="toggleUnit(this)">Crane</div>
     <div class="unit-content">
       <ul class="unit-list">
-        <li>Mobile Crane</li>
-        <li>Truck Crane</li>
-        <li>Rough Terrain Crane</li>
+        <li>Mobile Crane 25 Ton</li>
+        <li>Mobile Crane 50 Ton</li>
+        <li>Mobile Crane 100 Ton</li>
         <li>Crawler Crane</li>
       </ul>
     </div>
 
-    <div class="unit-title" onclick="toggleUnit(this)">Support Unit</div>
+    <!-- GRADER -->
+    <div class="unit-title" onclick="toggleUnit(this)">Motor Grader</div>
     <div class="unit-content">
       <ul class="unit-list">
-        <li>Water Truck</li>
-        <li>Fuel Truck</li>
-        <li>Lowbed Trailer</li>
-        <li>Prime Mover</li>
-        <li>Service Truck</li>
+        <li>12 Feet Blade</li>
+        <li>14 Feet Blade</li>
+        <li>Mining Grader</li>
       </ul>
     </div>
+
+    <!-- COMPACTOR -->
+    <div class="unit-title" onclick="toggleUnit(this)">Compactor</div>
+    <div class="unit-content">
+      <ul class="unit-list">
+        <li>Single Drum</li>
+        <li>Double Drum</li>
+        <li>Pneumatic Roller</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
 <section id="why">
   <div class="box">
-    <h2>Kenapa Kami</h2>
-    <p>
-      Kami bekerja secara independen dan netral, didukung jaringan pemilik alat yang luas.
-      Pendekatan kami terstruktur dan transparan, sehingga owner proyek mendapatkan unit
-      yang tepat, siap kerja, dan sesuai kebutuhan teknis.
-    </p>
+    Kami bekerja secara independen dan objektif sebagai penghubung antara owner proyek dan pemilik alat, memastikan unit yang tepat, siap kerja, dan sesuai kebutuhan teknis melalui koordinasi yang efisien dan terkontrol.
   </div>
 </section>
 
@@ -290,9 +305,9 @@ h2 {
   <div class="box">
     <h2>Rekam Jejak & Kepercayaan</h2>
     <ul>
-      <li>Pengadaan alat proyek konstruksi & tambang</li>
-      <li>Dipercaya oleh owner proyek skala kecil–menengah</li>
-      <li>Jaringan pemilik unit di berbagai wilayah</li>
+      <li>Terlibat dalam pengadaan alat proyek konstruksi & tambang</li>
+      <li>Dipercaya oleh owner proyek skala kecil hingga menengah</li>
+      <li>Kerja sama dengan pemilik unit di berbagai kota</li>
     </ul>
   </div>
 </section>
@@ -305,17 +320,22 @@ h2 {
   </div>
 </section>
 
-<a class="wa-float" href="https://wa.me/6282190724298" target="_blank">WhatsApp</a>
+<footer>
+© 2026 Borneo Engineering Equipment<br>
+Koordinator & Pengadaan Alat Berat Independen
+</footer>
+
+<a class="wa-float" href="https://wa.me/6282190724298">WhatsApp</a>
 
 <script>
 function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
+  const m = document.getElementById("menu");
+  m.style.display = m.style.display === "block" ? "none" : "block";
 }
 
 function toggleUnit(el) {
-  const content = el.nextElementSibling;
-  content.style.display = content.style.display === "block" ? "none" : "block";
+  const c = el.nextElementSibling;
+  c.style.display = c.style.display === "block" ? "none" : "block";
 }
 </script>
 
